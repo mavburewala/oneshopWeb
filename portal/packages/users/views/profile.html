@@ -1,0 +1,86 @@
+		   <div class="contentArea groupArea groupAreaA userPro" ng-controller="ProfileCtrl">
+             <div class="futura futuraNew fleft">
+            	<div class="breadCrumbs fleft">
+                	<div class="msgCrumb fleft"><a href="#">Profile</a></div>
+                	<div class="msgCrumb msgCrumbA fleft"><a href="#">{{user.full_name}}</a></div>
+                    <!--
+                    <ul>
+                    	<li class="mesg"><a href="#">MESSAGES</a></li>
+                    	<li class="act"><a class="" href="#">SHERIDAN LAY</a></li>
+                    </ul>-->
+                </div> 	
+             
+             <div class="sherdan fleft">
+             	<div class="textSher fleft">{{user.full_name}}</div>
+                <div class="textSherLinks fright">
+                	<ul>
+                  	<li class="actve"><a ui-sref="profile.posts">POSTS</a></li>
+                  	<li><a ui-sref="profile.about">ABOUT</a></li>
+                  	<li class=""><a ui-sref="profile.interactions">INTERACTIONS</a></li>
+                  	<li class="last"><a ui-sref="profile.badges">BADGES</a></li>
+                  </ul>
+                </div>
+                
+             </div>
+             
+             <div class="clear"></div>
+             
+              <div class="futura futuraNew sherMsgs fleft">
+	
+                 <div class="futraArea futraAreaAB">
+	                 <div class="futraAreaAAText forHeight fleft">
+                    <img src="{{user.profile_image}}" > </img>
+                   </div>
+                 
+                 <div class="likes fleft">
+                 <a class="like">20 <br /> Posts</a>
+                 <a class="like">7 <br /> Memberships</a>
+                 <a class="like last">54 <br /> RSVPs</a>
+             </div>
+             
+             <div class="msgSent fleft"><a href="#"><img src="assets/images/msg.png" /></a></div>
+             </div>
+
+       <!--       <div class="futura futuraNew fleft"></div>
+               <div class="contentAreaFor">
+           		<div class="daysAgo fleft">
+                	<a href="#">5 days ago</a>
+                </div>
+           		
+                <div class="paulG fleft" style="">
+                	<div class="box"></div>
+                    <h2>Sheridan Lay</h2>
+                    <p>This week Oprah, yes 'Oprah', will be coming to our meetup!
+                    Stay tuned on the group for updates on location and exact
+                    timing for this week's meetup. Obviously we wont be at Coupa
+                    for this meeting :)</p>
+                    
+                   <a href="#"><img src="assets/images/img.jpg" /></a>
+                   
+                   <a class="like" href="#">Like</a>
+                   <a class="like" href="#">Comment</a>
+                   <a class="like" href="#">Share</a>
+                    
+                </div> -->
+
+                <div ui-view></div>
+
+           	</div>
+             </div>   	
+                
+          </div>
+           </div>
+
+           <script type="text/javascript">
+            $(document).ready(function(){
+              //alert("Tets");
+              $(".textSherLinks li a").click(function(){
+                  //alert($(this).text());
+                 var currActive = $(".textSherLinks").find(".actve");
+                 console.log(currActive);
+                 currActive.removeClass("actve");
+
+                 $(this).parent().addClass("actve");
+              });
+            });
+           </script>

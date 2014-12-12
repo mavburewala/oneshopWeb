@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <title>Portal</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function() {
+            $(".hidetext").click(function() {
+                $(".text").toggle("slow", function() {
+
+                });
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".custom-select").each(function() {
+                $(this).wrap("<span class='select-wrapper'></span>");
+                $(this).after("<span class='holder'></span>");
+            });
+            $(".custom-select").change(function() {
+                var selectedOption = $(this).find(":selected").text();
+                $(this).next(".holder").text(selectedOption);
+            }).trigger('change');
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="wraper">
+
+        <div class="headerWraper">
+
+            <div class="banner banner1">
+                <a href="#">
+                    <img src="assets/images/loginimg.jpg" />
+                </a>
+            </div>
+
+            <div class="signInbar fleft">
+                <ul>
+                    <li><a ui-sref="auth.login">SIGN IN</a>
+                    </li>
+                    <li><a ui-sref="auth.register">REGISTER</a>
+                    </li>
+                    <li><a href="#">ABOUT</a>
+                    </li>
+                    <li><a href="#">Help</a>
+                    </li>
+                    <li><a href="#">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- <div class="contentArea loginPages"> -->
+
+            <div ui-view></div>
+
+
+            <!-- </div>  -->
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+

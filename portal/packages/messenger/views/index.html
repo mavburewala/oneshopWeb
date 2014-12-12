@@ -1,0 +1,77 @@
+<div class="contentArea groupArea groupAreaA" data-ng-controller="conversationsCtrl" ng-init="waitForNewMessage()">
+    <div class="breadCrumbs fleft">
+        <div class="msgCrumb fleft"><a href="#">MESSAGES</a>
+        </div>
+        <div class="msgCrumb msgCrumbA fleft"><a href="#">{{window.UserName}}</a>
+        </div>
+    </div>
+    <div class="messageArea fleft">
+        <div class="topbar fleft">
+            <div class="inbox fleft">Inbox({{listOfConversation.length}})</div>
+            <div class="inbox fleft">{{selectedConversation.participantsNames}}</div>
+            <div class="inbox inboxAA fleft">New Message</div>
+        </div>
+
+        <div class="searchCon fleft" id="conversations">
+            <div class="searchBar fleft">
+                <input type="text" class="search" placeholder="Search for conversations" ng-model="query" />
+            </div>
+            <div>
+                <div class="patrich border tillWeeks fleft" ng-repeat="conversation in listOfConversation | orderBy:'data.lastActivity':true | filter:query" ng-click="selectConversation(conversation)" id="{{conversation.id}}" ng-class="{selection: conversation.isSelected==true}" style="cursor:pointer">
+                    <div class="molagaardPatrick fleft">
+
+                        <div class="imgArea fleft">
+                            <div class="box">
+                                <img src="{{conversation.lastMessageBy.profile_image}}" />
+                            </div>
+                        </div>
+
+                        <div class="imgAreaText fleft">
+                            <p> <span>{{conversation.title}} </span> 
+                            </p>
+                            <p class="cantsbe">{{conversation.lastMessageText}}</p>
+                            <p class="todays">{{conversation.lastActivity}}</p>
+                            <div ng-if="conversation.unread!=0" class="redMsg">{{conversation.unread}}</div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="searchConR fleft">
+
+            <div class="chatWraper fleft" id="messages">
+                <div class="chatA" ng-repeat="message in selectedConversation.messages| orderBy:'data.timestamp':false" ng:class="{true:'fright', false:'fleft replyA'}[{{message.isMine}}]" style="margin-bottom: 0px" >
+                    <div class="box" ng:class="{true:'fright', false:'fleft'}[{{message.isMine}}]">
+                        <a ui-sref="profile.posts({ Id:message.by.id })">
+                            <img src="{{message.by.profile_image}}" />
+                        </a>
+                    </div>
+                    <div class="chatMsg fleft" style="max-width: 280px;" id="{{message.id}}">
+                        <p>{{message.text}}</p>
+                    </div>
+                    <div class="msgSeen" ng:class="{true:'msgSeenR', false:''}[{{message.isMine}}]">
+                        <p ng:class="{true:'seenRight', false:'seenLeft'}[{{message.isMine}}]">{{message.time}} <i ng-if="message.isSeen&&message.isMine">seen</i> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="writeRep fleft" style="margin-top:10px">
+
+                <div class="writeReply fleft">
+                    <textarea class="textArea" placeholder="Write New Message" ng-model="newMessage"></textarea>
+                    <div class="send" ng-click="sendNewMessage()" id="newMessageBtn">
+                        <a>
+                            <img src="assets/images/sendmsg.jpg" />
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

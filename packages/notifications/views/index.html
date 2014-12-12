@@ -1,0 +1,74 @@
+<div class="notification-wrapper" ng-controller="notificationsCtrl">
+    <div class="notification-container floatLeft">
+        <div class="notification-area floatLeft">
+            <div class="notification-header floatLeft">
+                <p class="floatLeft">Notifications</p>
+            </div>
+            <div class="notification-userinfo-container floatLeft" ng-repeat="notification in notifications" style="height: 63px;">
+              <div ng-switch on="notification.type">
+                <div ng-switch-when="liked">
+                <div class="notification-userinfo floatLeft" >
+                    <a href="javascript:void(0)" class="noti-userifno-bar floatLeft">
+                        <img src="{{notification.user.profile_image}}" class="floatLeft">
+                        <p ui-sref="profile.posts({ Id:notification.user.id })" class="floatLeft noti-username skyblue-color">{{notification.user.name}}</p>
+                        <span class="floatLeft noti-status black-color">liked your</span>
+                        <span class="floatLeft noti-posttag skyblue-color">post</span>
+                    </a>
+                </div>
+              </div>
+              <div ng-switch-when="added_group">
+                <div class="notification-userinfo floatLeft" >
+                    <a href="javascript:void(0)" class="noti-userifno-bar floatLeft">
+                        <img src="{{notification.user.profile_image}}" class="floatLeft">
+                        <p class="floatLeft noti-username skyblue-color">{{notification.user.name}}</p>
+                        <span class="floatLeft noti-status black-color">added you in</span>
+                        <span ui-sref="network.posts({ Id:notification.network })" class="floatLeft noti-posttag skyblue-color">group</span>
+                    </a>
+                </div>
+              </div>
+              <div ng-switch-when="commented">
+                <div class="notification-userinfo floatLeft" >
+                    <a href="javascript:void(0)" class="noti-userifno-bar floatLeft">
+                        <img src="{{notification.user.profile_image}}" class="floatLeft">
+                        <p class="floatLeft noti-username skyblue-color">{{notification.user.name}}</p>
+                        <span class="floatLeft noti-status black-color">commented on your</span>
+                        <span class="floatLeft noti-posttag skyblue-color">post</span>
+                    </a>
+                </div>
+              </div>
+              <div ng-switch-when="accepted_you">
+                <div class="notification-userinfo floatLeft" >
+                    <a href="javascript:void(0)" class="noti-userifno-bar floatLeft">
+                        <img src="{{notification.user.profile_image}}" class="floatLeft">
+                        <p class="floatLeft noti-username skyblue-color">{{notification.user.name}}</p>
+                        <span class="floatLeft noti-status black-color">accepted your request</span>
+                        <span class="floatLeft noti-posttag skyblue-color"></span>
+                    </a>
+                </div>
+              </div>
+              <div ng-switch-when="added_you">
+                <div class="notification-userinfo floatLeft" >
+                    <a href="javascript:void(0)" class="noti-userifno-bar floatLeft">
+                        <img src="{{notification.user.profile_image}}" class="floatLeft">
+                        <p class="floatLeft noti-username skyblue-color">{{notification.user.name}}</p>
+                        <span class="floatLeft noti-status black-color">added you</span>
+                        <span class="floatLeft noti-posttag skyblue-color"></span>
+                    </a>
+                </div>
+              </div>
+              <div ng-switch-when="group_post">
+                <div class="notification-userinfo floatLeft" >
+                    <a href="javascript:void(0)" class="noti-userifno-bar floatLeft">
+                        <img src="{{notification.user.profile_image}}" class="floatLeft">
+                        <p class="floatLeft noti-username skyblue-color">{{notification.user.name}}</p>
+                        <span class="floatLeft noti-status black-color">posted in </span>
+                        <span ui-sref="network.posts({ Id:notification.network })" class="floatLeft noti-posttag skyblue-color">group</span>
+                    </a>
+                </div>
+              </div>
+                <div ng-switch-default>Not categorized</div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

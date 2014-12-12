@@ -1,0 +1,36 @@
+<div class="clear"></div>
+
+<div ng-controller="networkMembersCtrl">
+    <div class="noteA gropMem fleft">
+        <h2>GROUP MEMBERS</h2>
+        <div class="addMembers fright">
+            <a href="#">
+                <img src="/assets/images/addmemebers.jpg">
+            </a>
+        </div>
+    </div>
+
+    <div class="noteB gropMem1 fleft">
+        <h2>ALL MEMBERS</h2>
+
+    </div>
+    <div>
+        <div class="noteA gropMem border molagaard fleft" ng-repeat="member in networkMembers">
+            <div class="box boxP"><img src="{{member.profile_image}}"/></div>
+            <p class="comentS comentSA" style="margin-left:60px"> <span>{{member.name}} </span> 
+            </p>
+            <p class=" patrick" style="margin-left:60px">
+                <a href="#">
+                    <img src="/assets/images/yellow.jpg">
+                </a>
+                <a href="#">
+                    <img src="/assets/images/yellow.jpg">
+                </a>
+                <a href="#">
+                    <img src="/assets/images/yellow.jpg">
+                </a>
+            </p>
+
+        </div>
+    </div ></div>
+    </div

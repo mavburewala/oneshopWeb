@@ -1,0 +1,379 @@
+<div class="banner">
+    <a href="#">
+        <img src="assets/images/banner.jpg" />
+    </a>
+</div>
+
+<div ng-controller="wallCtrl">
+    <div class="contentArea contcampus">
+        <div class="campPost fleft">
+            <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+                <img id="btnAddNewPost" src="assets/images/campost.jpg" />
+            </a>
+        </div>
+
+        <div style="clear:both;" ng-repeat="post in campusPosts">
+            <div class="daysAgo fleft">
+                <a href="#">{{post.time}}</a>
+            </div>
+
+            <div class="paulG fleft">
+                <div class="box">
+                    <img src="{{post.by.profile_image}}" />
+                </div>
+                <h2>{{post.by.name}}</h2>
+                <p>{{post.text}}</p>
+
+                <a href="#">
+                    <img ng-show="post.image" src="{{post.image}}" style="width:100%;height:auto" />
+                </a>
+
+                <a class="like" href="#">Like</a>
+                <a class="like" href="#">Comment</a>
+                <a class="like" href="#">Share</a>
+
+            </div>
+        </div>
+        <br>
+        <!--    <div class="allPosts fleft">
+        <select class="select">
+            <option>All Posts</option>
+            <option>New Posts</option>
+            <option>Old Posts</option>
+        </select>
+    </div>
+-->
+    </div>
+
+    <div id="light" class="white_content white_contentA">
+
+        <div class="popup pops">
+                
+<div id="disableUIpop" style="background-color: whitesmoke;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 25000;
+                        position: absolute;
+                        opacity: 0.85;
+                        visibility: hidden;
+                        "><h3 style="top: 50%;"> Please Wait... Your Post is being Created!!! </h3></div>
+            <div id="popBackLink" class="arowBack fleft">
+                <a href="#" class="btnBack">
+                    <img src="assets/images/arowback.jpg" />
+                </a>
+            </div>
+            <h3>CREATE A GENERAL POST</h3>
+            <div class="popConetnt fleft">
+
+                <div id="popContent" class="popConetnt fleft">
+                        
+                    <div class="popBox popBoxN popBoxNA">
+                        
+                        <div class="pops kindPopup fleft">  
+                            <div class="types fleft">What kind of post is this?</div>
+                            
+                            <div class="evernts fleft">
+                                <div id="btnEvent" class="music fleft"><a href="#"><img src="assets/images/event.jpg" /></a></div>
+                                <div id="btnAnnouncement" class="music fleft"><a href="#"><img src="assets/images/event2.jpg" /></a></div>
+                                <div id="btnGeneral" class="music fleft"><a href="#"><img src="assets/images/event3.jpg" /></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="fade" class="black_overlay">
+        <a id="popClose" class="close" href="javascript:void(0)">
+            <img src="assets/images/crosar.png" />
+        </a>
+    </div>
+
+    <input type="file" id="upload" name="upload" style="visibility: hidden; width: 1px; height: 1px" onchange="angular.element(this).scope().setFiles(this)" />
+
+</div>
+
+<script type="text/javascript">
+
+
+var loadEvtPopStep2 = function(){
+    $("#popContent").fadeOut("fast");
+    $('.btnBack').addClass("step2");
+    $('.popup h3').text("Create Event Post");
+    var step2Html = '<div class="popBox popBoxN">\
+                      <div class="pops fleft">\
+                        <div class="types fleft ">What type of event is this?</div>\
+                        <div id="music" class="music fleft evtType"><a href="#"><img src="assets/images/music.jpg" /></a></div>\
+                        <div id="speaker" class="music fleft evtType"><a href="#"><img src="assets/images/music2.jpg" /></a></div>\
+                        <div id="theater" class="music fleft evtType"><a href="#"><img src="assets/images/music3.jpg" /></a></div>\
+                        <div id="party" class="music fleft evtType"><a href="#"><img src="assets/images/music4.jpg" /></a></div>\
+                        <div id="sports" class="music fleft evtType"><a href="#"><img src="assets/images/music5.jpg" /></a></div>\
+                        <div id="other" class="music fleft evtType"><a href="#"><img src="assets/images/music6.jpg" /></a></div>\
+                    </div>\
+                    </div>';
+
+    $("#popContent").html(step2Html).hide("fast"); 
+
+    $("#popContent").fadeIn("slow");  
+
+    if($('.btnBack').is(":hidden")){
+        $('.btnBack').show();
+    }              
+};
+
+var loadStep1 = function(){
+    $('.btnBack').hide();
+    var step1Html = '<div class="popBox popBoxN popBoxNA">\
+                        <div class="pops fleft">\
+                            <div class="types fleft">What kind of post is this?</div>\
+                            <div class="evernts fleft">\
+                                <div id="btnEvent" class="music fleft"><a href="#"><img src="assets/images/event.jpg" /></a></div>\
+                                <div id="btnAnnouncement" class="music fleft"><a href="#"><img src="assets/images/event2.jpg" />\  </a></div>\
+                                <div id="btnGeneral" class="music fleft"><a href="#"><img src="assets/images/event3.jpg" /></a>\   </div>\
+                            </div>\
+                        </div>\
+                    </div>';
+
+    $("#popContent").html(step1Html); 
+
+    $("#popContent").fadeIn("slow");                 
+};
+
+var loadEvtPopStep3 = function(){
+    $('.popup h3').text("Create Event Post");
+    var step3Html = '<div class="popBox popBoxN">\
+                      <div class="pops fleft">\
+                        <div class="types fleft">When is this event?</div>\
+                        <div class="types calendarInput fleft"><input type="text" id="evtCalendar"></div>\
+                    </div>\
+                    </div>';
+
+    $("#popContent").html(step3Html); 
+
+    $("#popContent").fadeIn("slow");
+
+    $('.btnBack').removeClass("step2");
+    $('.btnBack').addClass("step3");
+};
+
+var loadEvtPopStep4 = function(){
+    var step4Html = '<div class="popConetnt fleft">\
+                        <div class="popBox popBoxN">\
+                        <p>OPTIONAL EXTRAS:</p>\
+                        <a id="btnImgUpload" href="#"><img src="assets/images/addimg.jpg" /></a>\
+                        <div id="lnkImage"> </div>\
+                            <textarea id="txtPost" class="texts"></textarea>\
+                        </div>\
+                        <div class="postBtn fright"><a id="btnPostUpload" href="#"><img src="assets/images/postpop.jpg" /></a></div>\
+                        <input type="file" id="imgUpload" name="imgUpload" style="visibility: hidden; width: 1px; height: 1px" />\
+                    </div>';
+
+    $("#popContent").html(step4Html); 
+
+    $("#popContent").fadeIn("slow");
+
+    $('.btnBack').removeClass("step3");
+    $('.btnBack').addClass("step4");                
+};
+
+ var getCookie = function(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+};
+
+var create_post = function(text, url, tag, title, time , userID, token)
+{
+    // var tags = '', main_tag = '';
+    // if(tag == 'speaker' || tag == 'music' || tag == 'theater' || tag == 'sports' || tag == 'party')
+    // {
+    //     tags = tag+',event';
+    //     main_tag = 'event';
+    // }
+    // if(tag == '')
+    // {
+    //     main_tag = 'event';
+    //     tags = 'event';
+    // }
+    var params = {
+        'id':userID, 
+        'token':token, 
+        'text':text, 
+        'url':url, 
+        'tags':tag
+    };
+    // if(main_tag == 'event')
+    // {
+    //     if(time)
+    //         params['event-time'] = moment(time).unix();
+    //     params['title'] = escapeHtml(title);
+    // }
+    //alert(params.tags);
+    $.ajax({
+        type: "POST",
+        url: "https://dev.gleepost.com/api/v1"+"/posts",
+        data: params,
+
+        success: function(response)
+        {
+            if(response) 
+            {
+                // popup.close();
+                // $('#modal_loading').remove();
+                // $('.post_item').remove();
+                // load_posts();
+                // //reset create post form
+                // $('.post_textarea, #event_datetime_val, #event_title').val('');
+                // $('.fileinput').fileinput('clear');
+                document.getElementById('light').style.display='none';
+                document.getElementById('fade').style.display='none';
+                location.reload();
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown)
+        {
+            // $('#modal_loading p img').remove();
+            // $('#modal_message').html('<p class="error">'+textStatus+': '+jqXHR.responseJSON.error+'</p>');
+            // console.log(jqXHR);
+            // setTimeout(function(){
+            //     $('#modal_loading').remove();
+            //     popup.close();
+            // }, 5000);
+            console.log(errorThrown);
+        }
+    });
+};
+
+$(document).ready(function(){
+    var tag = null;
+var time = null;
+
+    //alert("yo bro");
+    $(document).on('click', '#btnEvent', function() {
+  //  $("#btnEvent").on("click", function(){
+        loadEvtPopStep2();
+        return false;
+    });
+
+    $('.btnBack').click(function(){
+        if($('.btnBack').hasClass("step2")){
+            //you have to go back to step 1
+            $(this).removeClass("step2");
+            loadStep1();
+            
+        }
+
+        if($('.btnBack').hasClass("step3")){
+            //you have to go back to step 1
+            $(this).removeClass("step3");
+           // $('.btnBack').addClass("step2");
+            loadEvtPopStep2();
+            
+        }
+
+        if($('.btnBack').hasClass("step4")){
+            $(this).removeClass("step4");
+            loadEvtPopStep3();
+        }
+    });
+
+$(document).on('click', '.evtType', function() {
+    //$('.evtType').click(function(){
+        var evtType = $(this).prop("id");
+       // alert(evtType)
+       tag = evtType;
+       loadEvtPopStep3();
+        return false;
+});
+
+$(document).on('focus',"#evtCalendar", function(){
+    var txtDateField = $(this);
+    $(this).datepicker({
+        onSelect: function(dateText, inst) {
+            txtDateField.val(dateText);
+            time = dateText;
+            loadEvtPopStep4();
+        }
+    });
+});
+
+$(document).on('click',"#btnImgUpload", function(){
+  //  alert("upload");
+
+  document.getElementById('imgUpload').click(); 
+  return false;
+});
+
+$(document).on('click',"#btnPostUpload", function(){
+
+    $("#disableUIpop").css("visibility","visible");
+    //$("#popContent").html("<h3> Your Post is being Uploaded... </h3>"); 
+
+   // $("#popContent").fadeIn("slow");
+
+    var file = $('#imgUpload').prop('files');
+
+    var userCookie = getCookie("token_cookie");
+    userCookie = userCookie.split('|');
+
+    var formData = new FormData();
+
+    formData.append("id", userCookie[0]);
+    formData.append("token", userCookie[1]);
+   // elem = container.find(".file");
+    formData.append("image", file[0]);
+
+    $.ajax({
+        type: "POST",
+        url: "https://dev.gleepost.com/api/v1"+"/upload",
+        data: formData,
+        cache: false,
+        processData: false,
+        contentType: false,
+
+        success: function(response)
+        {
+            if(response) 
+            {
+                console.log(response.url);
+                create_post($("#txtPost").val(), response.url, tag, "Test Title", time, userCookie[0], userCookie[1] );
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown)
+        {
+            console.log(errorThrown);
+        }
+    });
+
+    
+});
+
+$(document).on('click',"#btnAnnouncement, #btnGeneral", function(){
+//$("#btnAnnouncement, #btnGeneral").click(function(){
+   // alert("same");
+   loadEvtPopStep4();
+   $('.btnBack').hide();
+});
+
+
+$("#btnAddNewPost").click(function(){
+    loadStep1();
+    disable_scroll();
+    $('body').addClass("blockScroll")
+    document.getElementById('light').style.display='block';
+    document.getElementById('fade').style.display='block';
+});
+
+$("#popClose").click(function(){
+    enable_scroll();
+    $('body').removeClass("blockScroll")
+    document.getElementById('light').style.display='none';
+    document.getElementById('fade').style.display='none';
+});
+    
+});
+
+
+</script>

@@ -1,0 +1,25 @@
+<div class="contentArea loginPages">
+
+    <div class="loginWraper clearfix">
+        <div class="loginPage">
+            <div class="sign ">Sign In</div>
+
+            <div class="signInput " data-ng-controller="LoginCtrl">
+
+                <form ng-submit="login()">
+                    <input required id="email" type="email" name="email" placeholder="Email" class="textFor" ng-model="user.email" />
+                    <input required id="password" type="password" name="password" placeholder="Password" class="textFor" ng-model="user.password" />
+
+                    <button type="submit" class="signUp fleft">Sign in</button>
+                </form>
+
+            </div>
+            <!-- <div class="signUp fleft"><a href="#">Sign In</a></div> -->
+
+            <div class="forgot fleft"><a href="#">Forgot password?</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>

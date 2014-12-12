@@ -1,0 +1,77 @@
+<div class="contentArea" data-ng-controller="RegisterCtrl">
+
+    <div class="loginWraper clearfix">
+        <div class="loginPage">
+            <div class="sign fleft">CREATE AN ACCOUNT</div>
+
+            <div class="signInput fleft">
+
+                <form ng-submit="register()">
+                    <input id="fname" type="text" name="fname" placeholder="First Name" class="textFor textForA" ng-model="user.fname" />
+
+                    <input id="lname" type="text" name="lname" placeholder="Last Name" class="textFor textForA" ng-model="user.lname" />
+
+                    <input id="email" type="email" name="email" placeholder="Email" class="textFor" ng-model="user.email" />
+
+                    <input id="password" type="password" name="password" placeholder="Password" class="textFor" ng-model="user.pass" />
+
+
+                    <button type="submit" class="signUp fleft">Sign In</button>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- <div data-ng-controller="RegisterCtrl">
+    <div ng-repeat="error in registerError">
+        <div class="alert alert-danger animated fadeIn">{{error.msg}}</div>
+    </div>
+    <div class="alert alert-danger animated fadeIn" ng-show="usernameError">{{usernameError}}</div>
+    <div class="alert alert-danger animated fadeIn" ng-show="emailError">{{emailError}}</div>
+
+    <h1>Register</h1>
+    <form ng-submit="register()" class="signup form-horizontal">
+        <div class="form-group">
+            <label for="name" class="col-md-4 control-label">First Name</label>
+            <div class="col-md-8">
+                <input id="fname" type="text" name="fname" placeholder="First Name" class="form-control" ng-model="user.fname"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="col-md-4 control-label">Last Name</label>
+            <div class="col-md-8">
+                <input id="lname" type="text" name="lname" placeholder="Last Name" class="form-control" ng-model="user.lname"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="col-md-4 control-label">Email</label>
+            <div class="col-md-8">
+                <input id="email" type="email" name="email" placeholder="Email" class="form-control" ng-model="user.email"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="col-md-4 control-label">Password</label>
+            <div class="col-md-8">
+                <input id="password" type="password" name="password" placeholder="Password" class="form-control" ng-model="user.pass"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-8">
+                <button type="submit" class="btn btn-primary">Sign up</button>&nbsp;
+                or&nbsp;<a ui-sref='auth.login' class="show-login">login</a>
+            </div>
+        </div>
+    </form>
+</div>
+ -->

@@ -1,0 +1,79 @@
+<div class="contentArea groupArea groupAreaA" ng-controller="PostsCtrl">
+    <div class="breadCrumbs fleft">
+        <div class="msgCrumb fleft"><a href="#">POSTS</a>
+        </div>
+        <div class="msgCrumb msgCrumbA fleft"><a href="#">{{window.UserName}}</a>
+        </div>
+        <!--
+                    <ul>
+                      <li class="mesg"><a href="#">MESSAGES</a></li>
+                      <li class="act"><a class="" href="#">SHERIDAN LAY</a></li>
+                    </ul>-->
+    </div>
+
+    <div class="left fleft">
+
+        <div class="futraArea post1A" ng-repeat="post in userPosts| orderBy:'post.time':false" style="min-height:330px">
+            <!--  <p>{{post.text}}</p>-->
+            <div class="postWraper fleft">
+
+                <div class="futraAreaAAText fleft">
+                    <!-- style="overflow:hidden;"><img src="{{post.videos[0].thumbnails[0]}}"></img>-->
+
+                    <div class="imgchartes fleft">
+                        <img src="{{post.image}}" style="height:auto;width:100%" />
+                    </div>
+
+                    <p style="min-height:20px;width:215px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis ">{{post.text}}
+                    </p>
+
+                </div>
+
+                <div class="likes newlikesAbb fleft">
+                    <a class="like newlike">0<br /> Views</a>
+                    <a class="like newlike">{{post.like_count}} <br /> Likes</a>
+                    <a class="like newlike last">{{post.comment_count}} <br /> Comments</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="right fleft">
+        <!--<div class="futraArea post">
+            <p>sort by</p>
+            <select class="select">
+                <option>popularity</option>
+                <option>popularity</option>
+                <option>popularity</option>
+            </select>
+        </div>-->
+
+
+        <div class="futraArea post">
+            <p>CALENDAR TOGGLE</p>
+
+            <div class="postWraper fleft">
+                <div class="futraAreaAAText fleft">
+
+                    <div class="futraArea post">
+                        <select class="select">
+                            <option>last 7 days</option>
+                            <option>last 15 days</option>
+                            <option>last 30 days</option>
+                            <option>all posts</option>
+                        </select>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

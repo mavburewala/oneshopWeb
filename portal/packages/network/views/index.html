@@ -1,0 +1,89 @@
+<div class="contentArea groupArea groupAreaA" ng-controller="networkCtrl">
+    <div class="breadCrumbs fleft">
+        <div class="msgCrumb fleft"><a href="#">GROUPS</a>
+        </div>
+        <div class="msgCrumb msgCrumbA fleft"><a href="#">{{window.UserName}}</a>
+        </div>
+        <!--
+                    <ul>
+                        <li class="mesg"><a href="#">MESSAGES</a></li>
+                        <li class="act"><a class="" href="#">SHERIDAN LAY</a></li>
+                    </ul>-->
+    </div>
+
+    <div class="futura futuraNew fleft">
+
+        <div class="futraArea fireside fleft">
+
+            <div class="futraAreaNew fleft">
+
+                <div class="box boxN"><img src="{{networkDetails.image}}"/></div>
+
+                <div class="meida fleft">
+                    <h2>{{networkDetails.name}}</h2>
+                    <p>{{networkDetails.description}}</p>
+
+                    <div class="setingA">
+                        <a href="#">
+                            <img src="assets/images/seting.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="allPostsEvents fleft">
+                    <ul>
+                        <li><a class="selected" ui-sref="network.posts">All Posts</a>
+                        </li>
+                        <li><a style="cursor:pointer" ui-sref="network.events">Events</a>
+                        </li>
+                        <li><a ui-sref="network.messages">Messages</a>
+                        </li>
+                        <li class="last"><a ui-sref="network.members">Members</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="futraArea futraAreaAB">
+            <p>MY OTHER GROUPS</p>
+            <div class="futraAreaAAText fleft"></div>
+
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="contentAreaFor">
+        <div ui-view></div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+   // alert("On Network");
+    var url = document.URL;
+    url = url.split('/');
+    url = url[url.length - 1];
+    $(".allPostsEvents li a:contains('All Posts')").removeClass("selected");
+    if(url === "posts"){
+        $(".allPostsEvents li a:contains('All Posts')").addClass("selected");
+    }
+    else if(url === "events"){
+        $(".allPostsEvents li a:contains('Events')").addClass("selected");
+    }
+    else if(url === "messages"){
+        $(".allPostsEvents li a:contains('Messages')").addClass("selected");
+    } 
+    else{
+        $(".allPostsEvents li a:contains('Members')").addClass("selected");
+    }
+//alert(url);
+    $(".allPostsEvents li a").click(function(){
+          //alert($(this).text());
+         var currActive = $(".selected");
+         //console.log(currActive);
+         currActive.removeClass("selected");
+
+         $(this).addClass("selected");
+    });
+});
+</script>

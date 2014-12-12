@@ -1,0 +1,42 @@
+<div class="group-members-wrapper" ng-controller="networkMembersCtrl">
+    <div class="group-members-container floatLeft">
+        <div class="group-members floatLeft">
+            <div class="gourp-members-box floatLeft" ng-repeat="member in networkMembers">
+                <div class="members-setting-icon floatLeft" >
+                    <a href="javascript:void(0)"> <img src="assets/icons/profile-setting-icon.png">
+                    </a>
+                </div>
+                <div class="group-members-image floatLeft">
+                    <a href="javascript:void(0)"> <img src="{{member.profile_image}}">
+                    </a>
+                </div>
+                <div class="gorup-member-name floatLeft">
+                    <a href="javascript:void(0)">
+                        <p>{{member.name}}</p>
+                    </a>
+                </div>
+                <div class="gorup-member-addby">
+                    <p>Added by Keyvon B 3 months ago.</p>
+                </div>
+                <div class="member-box-overlay floatLeft">
+                    <div class="members-overlay-icon floatLeft">
+                        <a href="javascript:void(0)" class="floatLeft"> <img class="floatLeft" src="assets/icons/profile-setting-icon.png">
+                            <p class="floatLeft">Settings</p>
+                        </a>
+                    </div>
+                    <div class="overlay-button floatLeft">
+                        <a href="javascript:void(0)" class="floatLeft">
+                            <p class="floatLeft">Make Admin</p>
+                        </a>
+                    </div>
+                    <div class="overlay-button-red floatLeft">
+                        <a href="javascript:void(0)" class="floatLeft">
+                            <p class="floatLeft">Delete</p>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

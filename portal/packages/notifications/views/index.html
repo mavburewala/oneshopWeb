@@ -1,0 +1,59 @@
+<div class="contentArea notification" ng-controller="notificationsCtrl">
+           		              <div class="breadCrumbs fleft">
+                	<div class="msgCrumb fleft"><a href="#">Notifications</a></div>
+                	<div class="msgCrumb msgCrumbA fleft"><a href="#">{{window.UserName}}</a></div>
+                    <!--
+                    <ul>
+                    	<li class="mesg"><a href="#">MESSAGES</a></li>
+                    	<li class="act"><a class="" href="#">SHERIDAN LAY</a></li>
+                    </ul>-->
+                </div>
+
+                <div class="noteA fleft">
+                   <h2>NOTIFICATIONS CENTER</h2>
+                </div>
+                
+               <!-- <div class="noteB fleft">
+                   <h2>Today</h2>
+                </div>
+               --> <div>
+                  <div ng-repeat="notification in notificationsToday">
+                    <div class="noteA postedComents noborder borderA fleft">
+                       <div class="box boxP notMargin"><img  src="{{notification.profile_image}}" /></div>
+                         <p class="comentS comentSA"> <span style="cursor:pointer" ui-sref="profile.posts({ Id:notification.Id })">{{notification.name}} </span> {{notification.action}} <strong>{{notification.boldPart}}.</strong> </p>
+                         <p class="todays">TODAY AT {{notification.time}}</p>
+                    </div>
+                  </div>
+                  <div ng-show = "{{newToday}}" class="noteA postedComents noborder borderA fleft"> No new Notifications </div>
+                </div>
+
+                  <!-- <div class="noteB fleft">
+                   <h2>Yesterday</h2>
+                </div>-->
+                <div ng-repeat="notification in notificationsYest">
+                  <div class="noteA postedComents border fleft">
+                     <div class="box boxP notMargin"><img  src="{{notification.profile_image}}" /></div>
+                     <p class="comentS comentSA"> <span style="cursor:pointer" ui-sref="profile.posts({ Id:notification.Id })">{{notification.name}}  </span> {{notification.action}} <strong>{{notification.boldPart}}.</strong> </p>
+                     <p class="todays">YESTERDAY AT {{notification.time}}</p>
+                     
+                  </div>
+
+
+                </div>
+                <div ng-show = "{{newYest}}" class="noteA postedComents noborder borderA fleft"> No new Notifications </div>
+
+                   <div class="noteB fleft">
+                   <h2>Older</h2>
+                </div>
+                
+                <div ng-repeat="notification in notificationsOld">
+                  <div class="noteA postedComents border fleft">
+                     <div class="box boxP notMargin"><img  src="{{notification.profile_image}}" /></div>
+                    <p class="comentS comentSA"> <span style="cursor:pointer" ui-sref="profile.posts({ Id:notification.Id })">{{notification.name}}</span> {{notification.action}} <strong>{{notification.boldPart}}.</strong> </p>
+                    <p class="todays">{{notification.date}}</p>
+                     
+                  </div>
+                </div>
+                <div ng-show = "{{newOld}}" class="noteA postedComents noborder borderA fleft"> No new Notifications </div>
+                <!-- <div class="noteA noteB jordan margin fleft"></div> -->
+         </div>

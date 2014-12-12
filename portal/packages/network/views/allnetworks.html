@@ -1,0 +1,52 @@
+<style>
+    .circle {
+        display: block;
+        width: 150px;
+        height: 150px;
+        margin: 1em auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-border-radius: 99em;
+        -moz-border-radius: 99em;
+        border-radius: 99em;
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+    }
+</style>
+<div class="contentArea groupArea" ng-controller="networksCtrl">
+    <div class="breadCrumbs fleft">
+        <div class="msgCrumb fleft"><a href="#">MESSAGES</a>
+        </div>
+        <div class="msgCrumb msgCrumbA fleft"><a href="#">SHERIDAN LAY</a>
+        </div>
+        <!--
+                    <ul>
+                      <li class="mesg"><a href="#">MESSAGES</a></li>
+                      <li class="act"><a class="" href="#">SHERIDAN LAY</a></li>
+                    </ul>-->
+    </div>
+
+    <div class="mygroups">
+        <div class="groupA fleft" ng-repeat="network in myNetworks">
+            <div class="groupAA">
+                <div class="seting fleft">
+                    <a href="#">
+                        <img src="assets/images/seting.jpg" />
+                    </a>
+                </div>
+                <div class="numbers">4</div>
+                <div class="circle fleft" style="background-image: url('{{network.image}}')">
+                    <a ui-sref="network.posts({ Id:network.id })">
+                        <!--<img src="{{network.image}}" style="" />-->
+                        <div style="margin-left=50px" class="circle" ></div>
+                    </a>
+                </div>
+                <h2 >{{network.name}}</h2>
+                <h3>{{network.description}}</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

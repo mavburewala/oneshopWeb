@@ -1,0 +1,529 @@
+<style>
+    /*.mousepadscroll{
+                    overflow-y: scroll;
+                }*/
+    
+    #wrapper {
+        /*position: absolute;*/
+        
+        top: 0px;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        background: #f5f5f5;
+        overflow: auto;
+        height: 30%;
+        float: left;
+    }
+    #scroller {
+        overflow: auto;
+        width: 6500px;
+        height: 20%;
+        float: left;
+        padding: 0;
+    }
+    #wrapper:hover div:nth-child(4) {
+        opacity: 1 !important;
+    }
+    #wrapper:hover #prev {
+        transition-duration: 350ms;
+        opacity: 1 !important;
+    }
+    #wrapper:hover #next {
+        transition-duration: 350ms;
+        opacity: 1 !important;
+    }
+    #prev {
+        margin: 181px 0 0 0;
+        z-index: 99999999;
+        cursor: pointer;
+        position: absolute;
+        left: 20px;
+        opacity: 0;
+        transition-duration: 0ms;
+    }
+    #next {
+        margin: 181px 0 0 0;
+        z-index: 99999999;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        opacity: 0;
+        transition-duration: 0ms;
+    }
+    #prev img {
+        width: 25px;
+        height: 43px;
+        opacity: 0.8;
+    }
+    #next img {
+        width: 25px;
+        height: 43px;
+        opacity: 0.8;
+    }
+</style>
+<div class="clearFix"></div>
+<!--<div class="over-flow-hidden">-->
+<div class="" id="wrapper" ng-controller="LiveCtrl">
+    <!--<div class="slider-wrapper">-->
+    <div class="slider-wrapper" id="scroller">
+        <div ng-repeat="live in campusLive" class="item-box  floatLeft" id="myItems">
+            <a href="javascript:void(0)"><img src="{{live.image}}">
+            </a>
+
+            <div class="item-box-title">
+                <p class="title-text ">{{live.text}}</p>
+            </div>
+            <div class="item-box-info ">
+                <p class="info-text ">{{live.time}}</p>
+            </div>
+        </div>
+    </div>
+    <div id="prev" class="floatLeft" onclick="myScroll.scrollToPage('prev', 0);return false">
+        <img src="assets/icons/left-icon.png">
+    </div>
+    <div id="next" class="floatRight" onclick="myScroll.scrollToPage('next', 0);return false">
+        <img src="assets/icons/right-icon.png">
+    </div>
+</div>
+<div class="clearFix"></div>
+<div class="wall-main-wrapper" ng-controller="wallCtrl">
+    <div class="wall-wrapper">
+        <!--<div class="toggle-buttons">
+            <div class="buttons">
+                <a class="margin-right-5px" href="javascript:void(0)"><img src="assets/icons/togglebutton-icon.png">
+                </a>
+                <a class="margin-left-18px" href="javascript:void(0)"><img src="assets/icons/togglebutton-icon-2.png">
+                </a>
+            </div>
+        </div>-->
+        <div class="buttons-container">
+            <div class="buttons">
+                <input ng-click="PartyClicked()" type="submit" class="btn blueBtn" value="Party" id='party'>
+            </div>
+            <div class="buttons">
+                <input ng-click="MusicClicked()" type="submit" class="btn purpleBtn" value="Music" id='music'>
+            </div>
+            <div class="buttons">
+                <input ng-click="SportsClicked()" type="submit" class="btn redBtn" value="Sports" id='sports'>
+            </div>
+            <div class="buttons">
+                <input ng-click="TheaterClicked()" type="submit" class="btn greenBtn" value="Theater" id='theater'>
+            </div>
+            <div class="buttons">
+                <input ng-click="SpeakerClicked()" type="submit" class="btn yellowBtn" value="Speaker" id='speaker'>
+            </div>
+            <div class="buttons">
+                <input ng-click="AllPostsClicked()" type="submit" class="btn cGreenBtn-w" value="All Post" id='allposts'>
+            </div>
+
+        </div>
+        <div class="wall-container">
+            <div class="creat-post-container" style="height:auto">
+                <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><img src="assets/icons/create-post.png">
+
+                    <p class="text">Creat a new post</p>
+                </a>
+
+                <div class="clearFix"></div>
+            </div>
+            <div class="post-container" ng-repeat="post in campusPosts" style="height:auto">
+                <div class="user-ifno">
+                    <a href="javascript:void(0)"><img height="35px" width="35px" src="{{post.by.profile_image}}">
+
+                        <div class="floatLeft user-info-name">
+                            <p class="text-username">{{post.by.name}}</p>
+
+                            <div class="clearFix"></div>
+                            <span>{{post.time}}</span>
+                        </div>
+                        <div class="clearFix"></div>
+                    </a>
+
+                </div>
+                <div class="post-image-container" style="clear: both">
+                    <a href="javascript:void(0)" style="height:auto" ng-show="post.image"><img src="{{post.image}}" style="width:100%;height:auto">
+                    </a>
+                </div>
+                <div class="post-info-container">
+                    <div class="post-info">
+                        <p>{{post.text}}</p>
+                    </div>
+                </div>
+                <div class="post-func-container">
+                    <div class="post-func-icons">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)"><img class="floatLeft" src="assets/icons/heart-icon.png">
+
+                                    <p class="floatLeft">30</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="displaycomments"><img class="floatLeft" src="assets/icons/comment-icon.png">
+
+                                    <p class="floatLeft">30</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img class="floatLeft" src="assets/icons/shear-icon.png">
+                                    <!--<p class="floatLeft">30</p>-->
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="show-comments-container comments-scrollbar">
+                    <div class="show-commnets">
+                        <a href="javascript:void(0)" class="use-comment-image">
+                            <img src="assets/icons/user-icon.png">
+                        </a>
+                        <p class="user-comment-name">sameer</p>
+                        <p class="floatLeft msg">Hello this is sameer here i am fine how about....! did check with the email, i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne....
+                        </p>
+                    </div>
+                    <div class="show-commnets">
+                        <a href="javascript:void(0)" class="use-comment-image">
+                            <img src="assets/icons/user-icon.png">
+                        </a>
+                        <p class="user-comment-name">sameer</p>
+                        <p class="floatLeft msg">Hello this is sameer here i am fine how about....! did check with the email, i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne....
+                        </p>
+                    </div>
+                    <div class="show-commnets">
+                        <a href="javascript:void(0)" class="use-comment-image">
+                            <img src="assets/icons/user-icon.png">
+                        </a>
+                        <p class="user-comment-name">sameer</p>
+                        <p class="floatLeft msg">Hello this is sameer here i am fine how about....! did check with the email, i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne.... i sent you the mail 5 6 time, let me know where ever you get onlne....
+                        </p>
+                    </div>
+                </div>
+                <div class="comments-text-box">
+                    <div class="text-box">
+                        <form>
+                            <input type="text" class="formInputs" placeholder="Write a comment..." />
+                            <input type="submit" class="button cGreenBtn" value="post">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<!--
+<script type="text/javascript">
+    var loadEvtPopStep2 = function() {
+        $("#popContent").fadeOut("fast");
+        $('.btnBack').addClass("step2");
+        $('.popup h3').text("Create Event Post");
+        var step2Html = '<div class="popBox popBoxN">\
+                      <div class="pops fleft">\
+                        <div class="types fleft ">What type of event is this?</div>\
+                        <div id="music" class="music fleft evtType"><a href="#"><img src="assets/images/music.jpg" /></a></div>\
+                        <div id="speaker" class="music fleft evtType"><a href="#"><img src="assets/images/music2.jpg" /></a></div>\
+                        <div id="theater" class="music fleft evtType"><a href="#"><img src="assets/images/music3.jpg" /></a></div>\
+                        <div id="party" class="music fleft evtType"><a href="#"><img src="assets/images/music4.jpg" /></a></div>\
+                        <div id="sports" class="music fleft evtType"><a href="#"><img src="assets/images/music5.jpg" /></a></div>\
+                        <div id="other" class="music fleft evtType"><a href="#"><img src="assets/images/music6.jpg" /></a></div>\
+                    </div>\
+                    </div>';
+
+        $("#popContent").html(step2Html).hide("fast");
+
+        $("#popContent").fadeIn("slow");
+
+        if ($('.btnBack').is(":hidden")) {
+            $('.btnBack').show();
+        }
+    };
+
+    var loadStep1 = function() {
+        $('.btnBack').hide();
+        var step1Html = '<div class="popBox popBoxN popBoxNA">\
+                        <div class="pops fleft">\
+                            <div class="types fleft">What kind of post is this?</div>\
+                            <div class="evernts fleft">\
+                                <div id="btnEvent" class="music fleft"><a href="#"><img src="assets/images/event.jpg" /></a></div>\
+                                <div id="btnAnnouncement" class="music fleft"><a href="#"><img src="assets/images/event2.jpg" />\  </a></div>\
+                                <div id="btnGeneral" class="music fleft"><a href="#"><img src="assets/images/event3.jpg" /></a>\   </div>\
+                            </div>\
+                        </div>\
+                    </div>';
+
+        $("#popContent").html(step1Html);
+
+        $("#popContent").fadeIn("slow");
+    };
+
+    var loadEvtPopStep3 = function() {
+        $('.popup h3').text("Create Event Post");
+        var step3Html = '<div class="popBox popBoxN">\
+                      <div class="pops fleft">\
+                        <div class="types fleft">When is this event?</div>\
+                        <div class="types calendarInput fleft"><input type="text" id="evtCalendar"></div>\
+                    </div>\
+                    </div>';
+
+        $("#popContent").html(step3Html);
+
+        $("#popContent").fadeIn("slow");
+
+        $('.btnBack').removeClass("step2");
+        $('.btnBack').addClass("step3");
+    };
+
+    var loadEvtPopStep4 = function() {
+        var step4Html = '<div class="popConetnt fleft">\
+                        <div class="popBox popBoxN">\
+                        <p>OPTIONAL EXTRAS:</p>\
+                        <a id="btnImgUpload" href="#"><img src="assets/images/addimg.jpg" /></a>\
+                        <div id="lnkImage"> </div>\
+                            <textarea id="txtPost" class="texts"></textarea>\
+                        </div>\
+                        <div class="postBtn fright"><a id="btnPostUpload" href="#"><img src="assets/images/postpop.jpg" /></a></div>\
+                        <input type="file" id="imgUpload" name="imgUpload" style="visibility: hidden; width: 1px; height: 1px" />\
+                    </div>';
+
+        $("#popContent").html(step4Html);
+
+        $("#popContent").fadeIn("slow");
+
+        $('.btnBack').removeClass("step3");
+        $('.btnBack').addClass("step4");
+    };
+
+    var getCookie = function(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
+    };
+
+    var create_post = function(text, url, tag, title, time, userID, token) {
+        // var tags = '', main_tag = '';
+        // if(tag == 'speaker' || tag == 'music' || tag == 'theater' || tag == 'sports' || tag == 'party')
+        // {
+        //     tags = tag+',event';
+        //     main_tag = 'event';
+        // }
+        // if(tag == '')
+        // {
+        //     main_tag = 'event';
+        //     tags = 'event';
+        // }
+        var params = {
+            'id': userID,
+            'token': token,
+            'text': text,
+            'url': url,
+            'tags': tag
+        };
+        // if(main_tag == 'event')
+        // {
+        //     if(time)
+        //         params['event-time'] = moment(time).unix();
+        //     params['title'] = escapeHtml(title);
+        // }
+        //alert(params.tags);
+        $.ajax({
+            type: "POST",
+            url: "https://dev.gleepost.com/api/v1" + "/posts",
+            data: params,
+
+            success: function(response) {
+                if (response) {
+                    // popup.close();
+                    // $('#modal_loading').remove();
+                    // $('.post_item').remove();
+                    // load_posts();
+                    // //reset create post form
+                    // $('.post_textarea, #event_datetime_val, #event_title').val('');
+                    // $('.fileinput').fileinput('clear');
+                    document.getElementById('light').style.display = 'none';
+                    document.getElementById('fade').style.display = 'none';
+                    location.reload();
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                // $('#modal_loading p img').remove();
+                // $('#modal_message').html('<p class="error">'+textStatus+': '+jqXHR.responseJSON.error+'</p>');
+                // console.log(jqXHR);
+                // setTimeout(function(){
+                //     $('#modal_loading').remove();
+                //     popup.close();
+                // }, 5000);
+                console.log(errorThrown);
+            }
+        });
+    };
+
+    $(document).ready(function() {
+        var tag = null;
+        var time = null;
+
+        //alert("yo bro");
+        $(document).on('click', '#btnEvent', function() {
+            //  $("#btnEvent").on("click", function(){
+            loadEvtPopStep2();
+            return false;
+        });
+
+        $('.btnBack').click(function() {
+            if ($('.btnBack').hasClass("step2")) {
+                //you have to go back to step 1
+                $(this).removeClass("step2");
+                loadStep1();
+
+            }
+
+            if ($('.btnBack').hasClass("step3")) {
+                //you have to go back to step 1
+                $(this).removeClass("step3");
+                // $('.btnBack').addClass("step2");
+                loadEvtPopStep2();
+
+            }
+
+            if ($('.btnBack').hasClass("step4")) {
+                $(this).removeClass("step4");
+                loadEvtPopStep3();
+            }
+        });
+
+        $(document).on('click', '.evtType', function() {
+            //$('.evtType').click(function(){
+            var evtType = $(this).prop("id");
+            // alert(evtType)
+            tag = evtType;
+            loadEvtPopStep3();
+            return false;
+        });
+
+        $(document).on('focus', "#evtCalendar", function() {
+            var txtDateField = $(this);
+            $(this).datepicker({
+                onSelect: function(dateText, inst) {
+                    txtDateField.val(dateText);
+                    time = dateText;
+                    loadEvtPopStep4();
+                }
+            });
+        });
+
+        $(document).on('click', "#btnImgUpload", function() {
+            //  alert("upload");
+
+            document.getElementById('imgUpload').click();
+            return false;
+        });
+
+        $(document).on('click', "#btnPostUpload", function() {
+
+            $("#disableUIpop").css("visibility", "visible");
+            //$("#popContent").html("<h3> Your Post is being Uploaded... </h3>"); 
+
+            // $("#popContent").fadeIn("slow");
+
+            var file = $('#imgUpload').prop('files');
+
+            var userCookie = getCookie("token_cookie");
+            userCookie = userCookie.split('|');
+
+            var formData = new FormData();
+
+            formData.append("id", userCookie[0]);
+            formData.append("token", userCookie[1]);
+            // elem = container.find(".file");
+            formData.append("image", file[0]);
+
+            $.ajax({
+                type: "POST",
+                url: "https://dev.gleepost.com/api/v1" + "/upload",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+
+                success: function(response) {
+                    if (response) {
+                        console.log(response.url);
+                        create_post($("#txtPost").val(), response.url, tag, "Test Title", time, userCookie[0], userCookie[1]);
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                }
+            });
+
+
+        });
+
+        $(document).on('click', "#btnAnnouncement, #btnGeneral", function() {
+            //$("#btnAnnouncement, #btnGeneral").click(function(){
+            // alert("same");
+            loadEvtPopStep4();
+            $('.btnBack').hide();
+        });
+
+
+        $("#btnAddNewPost").click(function() {
+            loadStep1();
+            disable_scroll();
+            $('body').addClass("blockScroll")
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+        });
+
+        $("#popClose").click(function() {
+            enable_scroll();
+            $('body').removeClass("blockScroll")
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+        });
+
+    });
+</script>-->
+
+<script type="text/javascript" src="assets/js/jquery.mousewheel.js"></script>
+<!--<script type="text/javascript"src="assets/js/jquery.trackpad-scroll-emulator.min.js"></script>-->
+<script type="text/javascript">
+    $(window).resize(function() {
+        var lenght = $(".item-box").length;
+        var width = $(".item-box").width();
+        var totalwidth = (width + 25) * lenght;
+        $('#scroller').css('width', totalwidth + 'px');
+    });
+
+
+
+
+    var myScroll;
+    $("#next").click(function(){
+        console.log($("#wrapper").scrollLeft());
+        myScroll=$("#wrapper").scrollLeft();
+        myScroll+=800;
+        $("#wrapper").animate({scrollLeft: myScroll}, 800);
+});
+    $("#prev").click(function(){
+        console.log($("#wrapper").scrollLeft());
+        myScroll=$("#wrapper").scrollLeft();
+        myScroll-=800;
+        $("#wrapper").animate({scrollLeft: myScroll}, 800);
+        //$("#wrapper").scrollLeft(myScroll);
+});
+    $(document).ready(function() {
+        $("body").delegate('.displaycomments', 'click', function() {
+            $(this).parent().parent().parents('.post-container').find('.show-comments-container').fadeToggle();
+        });
+
+
+
+    });
+
+    /*document.addEventListener('touchmove', function (e) {e.preventDefault();}, false);*/
+</script>

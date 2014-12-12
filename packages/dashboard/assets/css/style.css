@@ -1,0 +1,1627 @@
+
+/* CSS Document */
+
+*{ margin:0; padding:0}
+.clear { clear:both; }
+
+body { font-family:Arial, Helvetica, sans-serif; font-size:14px; margin:0; color:#505050; background:#f5f5f5}
+
+
+img { max-width:100%; height:auto ; border:none; 
+    
+}
+.fleft { float:left }
+.fright { float:right }
+
+/* clearing floats */
+.clearfix:after { content: "&nbsp;"; font-size:0; display:block; height:0; clear:both; visibility:hidden; }
+
+.clearfix { display: inline-block }
+
+.clearfix { display:block }
+
+* html .clearfix { height: 1%; }
+
+.clear { clear: both; }
+
+/*-----------------*/
+
+.wraper{ width:100%; margin:0 auto}
+.headerWraper {
+    float: left;
+    position: relative;
+    width: 100%;
+	height:;
+}
+.headerWraperA{ height:193px}
+.leftSection {
+    background: none repeat scroll 0 0 #fff;
+    position: absolute;
+    width: 92px;
+    z-index: 100;
+	left:-2px
+}
+.rightSection {
+    background: none repeat scroll 0 0 #fff;
+    padding-left:0%;
+    width:1000px; margin:0 auto; float:none;
+	border-bottom:none;
+}
+
+.dropDown{ border-right:1px solid #f0f0f0; width:100%; padding:14px 0}
+.btn{ text-align:center; padding:15px 0 19px 0}
+.dashbord{ 
+   background: url("../images/borderbtm.jpg") no-repeat scroll center bottom rgba(0, 0, 0, 0);
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0 0 15px;
+    text-transform: uppercase;
+	text-align:center
+}
+.dashbord img{ margin:15px 0}
+.dashbord a{ text-decoration:none; color:#505050}
+
+.header {
+    background: none repeat scroll 0 0 #fff;
+    border-bottom: 1px solid #e6e6e6;
+    float: left;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+	height:68px;
+    z-index: 5;
+}
+
+
+.logo{ width:176px; margin:15px 20px 12px 0px}
+.searchBar{ margin-top:12px;}
+
+.searchBar input {
+    background: none repeat scroll 0 0 #f5f5f5;
+    border: medium none;
+    border-radius: 5px;
+    font-size: 15px;
+    height: 47px;
+    line-height: 18px;
+    padding: 0 15px;
+    text-transform: capitalize;
+    width: 207px;
+}
+.nav{ width:390px}
+.nav2{ width:500px}
+.nav ul{ margin-top:27px; margin-left:5%}
+.nav ul li{ list-style:none; float:left; border-left:1px solid #f0f0f0; margin:0 0 0 15px; padding:0 0 0 15px;position: relative;}
+.nav ul li a{ text-decoration:none; font-size:13px; color:#000; text-transform:uppercase}
+.nav ul li a:hover,.nav ul li a.actve{ background:url("../images/hover.jpg") no-repeat center bottom; padding-bottom:15px;}
+ .icoSearch{ margin-top:-2px; margin-right:5px }
+ .icoSearch2{ margin-top:1px; }
+ 
+
+.banner{ margin-top:62px}
+.box{ background:#f5f5f5; width:36px; height:36px; border-radius:5px; float:left; border:1px solid #e6e6e6}
+.box img{ width:100%; float:left;}
+.checkBox p{ margin-left:15px; float:left; font-size:15px; margin-top:10px;}
+.checkBox { margin-top:15px; margin-left:0;}
+
+.nav ul li.note{ border-right:1px solid #f0f0f0; padding-right:15px; margin-right:0px}
+.banner img{ width:100%}
+.dashbord:hover{ opacity:.8; cursor:pointer; color:red}
+
+.contentArea{ width:1000px; margin-left:15%; float:none; margin:0 auto; margin-top:45px; position:relative;}
+.daysAgo {
+    background: url("../images/days.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    padding:16px 8px 25px 15px;
+    text-align: center;
+    width: 138px;
+}
+.daysAgo a{  text-decoration:none; color:#505050; font-weight:bold; text-transform:uppercase}
+
+.paulG { width:521px; margin:0 15px; background:#fff; border:1px solid #e9e9e9; padding:15px; margin-bottom:30px; border-radius:5px}
+.paulG h2{ margin-top:5px; margin-left:10%; color:#505050; font-size:18px;}
+.paulG p{ margin-top:22px; font-size:18px; margin-bottom:5px}
+.allPosts { width:140px}
+
+a.like{ text-decoration:none; color:#505050; font-size:18px; margin-left:18%; margin-top:20px; float:left;}
+a.like:hover{ text-decoration:underline}
+
+.allPosts{ width:140px; background:#e9e9e9; height:36px;}
+.select-wrapper{
+		float: left;
+		display: inline-block;
+		background: url("../images/dropdown.png") no-repeat right center;
+		cursor: pointer;
+	}
+	.select-wrapper, .select-wrapper select{
+		width: 180px;
+		height: 36px;
+		line-height: 26px;
+	}
+	.select-wrapper .holder{
+		display: block;
+		margin: 0 35px 0 5px;
+		white-space: nowrap;            
+		overflow: hidden;
+		cursor: pointer;
+		position: relative;
+		z-index: -1;
+	}
+	.select-wrapper select{
+		margin: 0;
+		position: absolute;
+		z-index: 2;            
+		cursor: pointer;
+		outline: none;
+		opacity: 0;
+		/* CSS hacks for older browsers */
+		_noFocusLine: expression(this.hideFocus=true); 
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+		-khtml-opacity: 0;
+		-moz-opacity: 0;
+	}
+.custom-select{ color:#000}
+
+/* groups Page */
+
+.mygroups{}
+.groupA{ width:300px; margin-right:25px; padding-bottom:23%}
+.groupA p{ color:#969696; font-size:12px; margin-left:15px; margin-bottom:5px}
+.groupA p a{ color:#969696; font-size:12px;  text-decoration: none}
+
+.groupAA{ border-radius:5px; float:left; padding:15px; position:relative; background:#fff; border:1px solid #ebebeb}
+.numbers{ position:absolute; right:-12px; top:-15px; border-radius:50px;width:36px; height:32px; background:#ff5967; color:#fff;text-align:center; font-size:24px; padding-top:4px}
+
+.circle{ width:100%; text-align:center; float:none}
+.groupAA h2{ font-size:30px; font-weight:normal; color:#4baef0; float:left; margin-left:0px; margin-top:15px;width:100%; margin-bottom:8px;}
+.groupAA h3 {
+    color: #505050;
+    float: left;
+    font-size: 19px;
+    margin-left: 0px;
+    margin-top: 0;
+    width: 100%;
+	 font-weight:normal;
+}
+.groupArea{ margin-top:22px;}
+.circle img{ width:60%}
+
+
+/* Notification Page */
+
+.notification{ }
+
+.noteA {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 5px 5px 0 0;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    padding-left: 15px;
+    position: relative;
+    width: 970px;
+	padding:15px
+}
+
+.noteB {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    line-height: 30px;
+    width: 1000px;
+	border-left:1px solid #ebebeb;
+	border-right:1px solid #ebebeb;
+}
+.noteA .box{ margin-top:10px;}
+.noteA p {
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 6%;
+}
+.noteA p span{ color:#3498db; font-weight:bold}
+p.todays {
+    position: absolute;
+    right: 20px;
+    top: 24px;
+	margin:0;
+	font-weight:bold;
+	font-size:9px
+	
+}
+.noteA h2{ font-size:17px; margin-left:10px}
+.notification .noteA{ padding:15px;}
+.newNote{ padding-bottom:300px; margin-bottom:25px; border-radius:0 0 5px 5px; padding-left:15px}
+.border{ border-bottom: 0 /*1px solid #ebebeb*/; border-radius:0}
+.border box{ margin-left:15px; margin-top:0}
+.newNote .box {
+    margin-left: 11px;
+    margin-top: -8px;
+}
+.noteB h2{ margin-left:15px; font-weight:bold; font-size:13px; text-transform:uppercase;margin-left:27px}
+.noborder{ border-top:none; border-radius:0; border:0}
+
+/***********View Grouop*******/
+
+.futura{ width:76%; margin:0 auto; float:none}
+.futura p{ margin-left:20px;}
+.futraArea{ width:760px; margin-right:15px;}
+.boxN{ width:102px; height:102px;}
+
+.futraArea h2{
+ color: #4baef0;
+    float: left;
+    font-size: 18px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+    margin-top: 0px;
+    width: 85%;
+	font-weight:normal;
+	color:#000
+}
+
+ul li{list-style:none;}
+ul li a{ text-decoration:none}
+
+.futraArea p{ margin-left:15px; float:left; font-size:17px; margin-top:5px; margin-bottom:5px; text-transform:}
+.meida{ width:603px;}
+.setingA{ position:absolute; top:17px; right:12px;}
+.allPostsEvents { width:100%; background:#f7f7f7; height:50px; margin-top:15px}
+.allPostsEvents ul {
+    float: left;
+    margin-top: 15px;
+	margin-left:15%
+}
+.allPostsEvents ul li {
+    border-right: 1px solid #999;
+    float: left;
+    list-style: none outside none;
+    margin: 0 15px 0 15px;
+    padding-right: 17px;
+}
+
+.allPostsEvents ul li a{ color:#464646; font-size:16px; text-transform:uppercase; font-weight:bold}
+.last{ border:0 !important}
+.allPostsEvents ul li a.selected,.allPostsEvents ul li a:hover{ color:#3498db}
+
+.futraAreaAA{ width:223px;}
+.futraAreaAAText{ width:100%; height:250px; background:#fff; border:1px solid #ebebeb; border-radius:5px;}
+.groupAreaA {
+    position: relative;
+    width: 1000px;
+    /*z-index: -5;*/
+}
+
+.futraAreaAB {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    float: left;
+    width: 223px;
+	margin-right:0
+}
+
+.futraAreaNew{background:#fff; padding:15px; border:1px solid #ebebeb; border-radius:5px; width:95%; position:relative; margin-bottom:15px;}
+.futraAreaAB p{ font-size:12px;}
+.addMembers { position:absolute; right:5px; top:5px}
+.gropMem1{ width:98%; margin-bottom:0px; }
+.gropMem h2 {
+    color: #000;
+    font-size: 20px;
+    line-height: 21px;
+    margin: 5px 0;
+}
+
+.gropMem { height:; width:714px}
+.molagaard p{ margin-top:0px;}
+.molagaard p.comentS{ margin-top:10px;}
+.molagaard { margin-bottom:0px; padding-bottom:10px; border-bottom:0}
+
+.futraArea p.patrick {
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 25px;
+    margin-top: 14px;
+}
+p.todays a,.futraArea p.patrick a{ margin-right:5px;}
+.margin{ margin-bottom:70px;}
+
+/*********** My Posts *****************/
+
+.likes{ width:100%; float:left; border-top:1px solid #e6e6e6}
+.likes a{ float:left; margin-left:0; font-size:14px; color:#969696; border-right:1px solid #969696; margin-right:5px; padding-right:5px; margin-left:10px;}
+
+.post1A{ 
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    float: left;
+    width: 243px;
+}
+.post1A p{ font-size:12px; color:#969696}
+.post{ 
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    float: left;
+    width: 220px;
+}
+
+.postWraper{  background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    width: 100%;
+	height:300px
+	
+}
+.postWraper .futraAreaAAText { border:0 }
+.likes a {
+    border-right: 1px solid #ebebeb;
+    color: #969696;
+    float: left;
+    font-size: 13px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    margin-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+	font-weight:bold;
+}
+.left{ width:778px;padding-bottom:80px}
+.right{ width:220px;}
+.select {
+    background: none repeat scroll 0 0 #eee;
+    border: medium none;
+    height: 36px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-top: 14px;
+    padding-left: 15px;
+    text-transform: uppercase;
+    width: 92%;
+}
+.empty{ height:250px; }
+.post p{ font-size:12px}
+.notification .jordan {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 0;
+    padding-bottom: 250px;
+    width: 970px;
+	border-radius:0 0 5px 5px
+}
+.futuraNew{ width:100%}
+
+/************* Messanger ***************/
+
+.messageArea{ border:1px solid #ebebeb; border-radius:5px; width:1000px; background:#fff; margin-bottom:100px;}
+.topbar{ width:100%; border-bottom:1px solid #ebebeb}
+.inbox {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    width: 290px;
+}
+.searchCon { width:293px; border-right:1px solid #ebebeb; overflow:scroll; height:524px}
+
+/* will be red only in google chrome */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .searchCon{height:517px}
+}
+
+
+.searchCon .searchBar{ width:80%; margin:16px}
+.searchCon .searchBar input{ width:100%}
+
+.patrich{   background:/*url(../images/boxa.png) no-repeat 5.5% center */#fff;
+    border: 1px solid #ebebeb;
+    border-right:none;
+    border-top:none;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    padding-left: 15px;
+    position: relative;
+    width: 94%;
+	padding:15px 0 0 12px;
+}
+.patrich p span{ padding-left:15px; padding-top:0px; float:left; font-weight:bold; color:#000}
+.cantsbe{ float:left;margin:0 15px 15px 15px; width:98%}
+.patrich .todays{ top:-2px}
+.molagaardPatrick {
+    width: 100%;
+	position:relative
+}
+
+.patrich:hover{ background:/*url(../images/box.png) no-repeat 5.5% center*/ #f7f7f7; z-index:500; position:relative}
+.patrich:hover p span{ color:#3498db;}
+
+.patrich.selection{ background: #f7f7f7; }
+.patrich.selection p span{ color:#3498db;}
+
+.patrich .box:hover{ background:#fff}
+.redMsg{ position:absolute; left:-8px; top:-6px; background:url(../images/redcircle.png) no-repeat; width:18px; height:18px; text-align:center; color:#fff}
+.redMsgN {
+    left: 3px;
+    position: absolute;
+    top: -18px;
+}
+.searchConR { width:705px; background:;}
+.inboxAA {
+    background: url("../images/edit.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: right;
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-top: 20px;
+    width: 175px;
+}
+
+.chatA{ width:400px; margin:16px 25px}
+.chatMsg {
+    background: none repeat scroll 0 0 #54dfc3;
+    border-radius: 5px;
+    color: #fff;
+    float: right;
+    font-size: 14px;
+    margin: 19px 5px 0 0;
+    padding: 10px;
+    width: 280px;
+}
+
+.chatA .box{ float:right}
+.replyA{ margin-bottom:100px;}
+.replyA .box{ float:left;}
+.replyA .chatMsg{ float:left; margin-left:5px; background:#f4f4f4; color:#464646}
+.writeRep{ background:#e6f2fb;}
+
+.writeReply{ width:100%}
+.textArea{ width:647px; float:left; margin:15px 22px; background:#fff; border-radius:5px; border:none; resize:none; padding-left:15px; padding-top:15px; height:70px; font-size:14px; font-family:Arial, Helvetica, sans-serif}
+.send {
+    float: right;
+    margin-bottom: 12px;
+    margin-right: 20px;
+    text-align: right;
+}
+.textAreaA{ width:695px}
+.loginPage{ width:339px; float:left; background:#fff; margin-bottom:150px;}
+.sign{ background:url(../images/signForm.jpg) no-repeat; text-align:center; width:340px; height:60px; line-height:60px; font-size:18px; color:#fff; text-transform:uppercase}
+.signInput { background:#fff}
+.textFor{ background:#f5f5f5; width:270px; height:47px; line-height:18px; border:none; padding:0 15px; border-radius:5px; font-size:15px; text-transform:lowercase; margin:20px 20px 0 20px; color:#c8c8c8}
+.signUp{ background:url(../images/sign.jpg) no-repeat;text-align:center; width:303px; height:62px; line-height:60px; font-size:18px; color:#fff; text-transform:uppercase; margin:20px 20px 7px; border:1px saddlebrown}
+.signUp a{ color:#fff; text-decoration:none}
+.signUp:hover{ cursor:pointer}
+.signInbar { width:100%; background:#fff;}
+.signInbar ul {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    width: 423px;
+}
+ .signInbar ul li{ float:left; margin:15px;}
+.signInbar ul li a{ color:#464646; font-weight:bold; text-transform:uppercase}
+.signInbar ul li a:hover{ opacity:.7}
+
+.loginWraper{ width:37%; margin:70px auto; position:relative; z-index:100; left:2%}
+.loginPages{}
+.textForA {
+    margin-right: 0;
+    width: 108px;
+}
+.banner1{ margin-top:0}
+.forgot{ width:100%; text-align:center;margin-bottom:10px;}
+.forgot a{ color:#c8c8c8; font-weight:bold; text-decoration:none}
+
+.groupArea ,.notification{ margin-top:83px}
+
+
+/*slide top left menu*/
+#panel, #flip {
+    padding: 0px 0;
+    text-align: center;
+}
+
+#panel
+{
+padding:;
+display:none;
+}
+.allPosts .select {
+    background: none repeat scroll 0 0 #eee;
+    border: medium none;
+    height: 36px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-left: 15px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.comentS{ margin-top:10px}
+.meida h2{ color:#3498db; margin-top:5px; font-size:23px;}
+
+.mesenger{ border:1px solid #eaeaea; border-radius:5px; float:left; background:#fff; width:99%}
+.mesenger .chatMsg{ width:320px}
+.mesenger .searchConR { width:100%;}
+.notification .postedComents{ padding:10px 15px; font-weight: bold;}
+
+.fireside{ width:}
+.fireside .meida{ width:578px}
+.why{ margin-right:2%}
+.borderA{ border-left:1px solid #ebebeb;border-right:1px solid #ebebeb}
+
+.tillWeeks{ border-left:0}
+.noteA .boxP{ width:46px; height:46px; margin-top:0}
+.comentSA{ margin-top:12px;}
+.contentAreaFor{ margin-top:-35px; float:left}
+.molagaard p.comentSA{ margin-top:15px;}
+
+.noteA .notMargin{ margin-top:10px}
+.linG {
+    background: url("../images/lineparagraph.jpg") no-repeat scroll 10px center #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    color: #9c9c9c;
+    padding: 12px 18px 13px 50px;
+}
+.lineGrapg{ width:100%; }
+.dash{ border:1px solid #e6e6e6; border-radius:5px; background:#fff; padding:15px; width:723px;}
+
+.postcard {
+    background: url("../images/postsa.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 16px;
+    height: 49px;
+    line-height: 18px;
+    padding:12px 0 0 36px;
+    width: 90px;
+	background-size:100%
+}
+.postcard a {
+    color: #fff;
+    float: left;
+    margin: 4px 8px;
+    text-decoration: none;
+}
+
+.postcard span {
+    color: #ffd26d;
+    float: left;
+    font-size: 29px;
+    font-weight: bold;
+    margin-top: 45px;
+}
+.dash p.selectsss {
+    color: #969696;
+    margin: 12px;
+}
+.view{ background:url(../images/views.jpg) no-repeat;background-size:100%}
+.interactions{ background:url(../images/inter.jpg) no-repeat;background-size:100% }
+.buzz{ background:url(../images/buz.jpg) no-repeat; background-size:100%}
+
+.interactions a{ margin:4px -3px}
+.buzz a{ margin:4px -3px}
+
+.barCharts {
+    margin-top: 70px;
+    position: relative;
+    width: 735px;
+}
+
+.barCharts img{ width:100%}
+.acoutWraper { width:100%; margin:27px 0}
+.acountMat{}
+.matricA{border:1px solid #e6e6e6; border-radius:5px; background:#fff; height:248px; width:496px; margin-right:10px;}
+
+.acountMatA{ width:235px; margin-right:10px;}
+.acountMatB{ width:235px}
+.acountMatA .frndBox{ background:#aea8f0; width:100%; padding-top:80px; padding-bottom:10px; border-radius:5px; text-align:center}
+.frndBox span {
+    color: #fff;
+    float: left;
+    font-size: 32px;
+    font-weight: normal;
+    margin-right: 25px;
+    margin-top: 15px;
+    text-align: right;
+    width: 95%;
+}
+.acountMatB .frndBox { background:#55dfe0}
+.frndBox a{ float:right; margin-right:5px;}
+.frndBox a img{ width:80%}
+.acountMat p{ color:#969696; margin-bottom:10px; margin-left:15px; font-size:12px; font-weight:bold}
+
+.forHeight{ height:}
+
+/**************** User profile ***************************/
+
+.breadCrumbs{ width:100%; background:#f0f0f0; border:1px solid #dcdcdc; border-radius:2px; margin-bottom:13px}
+.breadCrumbs ul li {
+    float: left;
+    width:178px;
+	text-align:center;
+    padding: 8px 0;
+	background:url(../images/hover.png) no-repeat 0px -33px ;
+
+}
+.breadCrumbs ul li.mesg{background:url(../images/hover2.png) no-repeat 0px -33px ;}
+.breadCrumbs ul li a {
+    color: #8c8c8c;
+    font-size: 14px;
+    font-weight: bold;
+}
+.breadCrumbs ul li:hover,.breadCrumbs ul li.act{background-position:0px 0; margin-left:17%}
+.sherdan {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px 2px 0 0;
+    margin-top: 0px;
+    width: 100%;
+}
+.textSher {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 49px;
+    padding-left: 20px;
+}
+
+.textSherLinks{ }
+.textSherLinks ul li{ float:left; border-right:1px solid #e6e6e6; padding:15px 38px;}
+.textSherLinks ul li a{ color:#000; font-size:15px; font-weight:bold;}
+.textSherLinks ul li a:hover, .textSherLinks ul li.actve a {
+    background: url("../images/userArow.png") no-repeat scroll center 25px rgba(0, 0, 0, 0);
+    color: #48a4e1;
+    padding-bottom: 16px;
+}
+
+.sherMsgs{ float:left; margin-top:13px}
+.sherMsgs .futraAreaAB{ width:274px; background:#fff; border:1px solid #e6e6e6; border-radius:5px;}
+.sherMsgs .futraAreaAAText{ background:#f7f7f7; width:90%; margin:15px; height:; border:none}
+.sherMsgs .futraAreaAAText img{ border-radius:5px}
+.sherMsgs .contentAreaFor{ width:723px; margin-top:0}
+.sherMsgs .daysAgo { padding-left:10px; width:153px}
+.sherMsgs .paulG{ margin-right:0; margin-left:5px}
+
+.msgSent{ width:100%; text-align:center; margin:15px 0;}
+.msgSent a:hover{ opacity:.8} 
+.sherMsgs .likes{ border:none}
+.sherMsgs .likes a{ border:none; color:#000; font-size:}
+.likes a:hover{ cursor:pointer; opacity:.5; text-decoration:none} 
+
+.msgCrumb {background:url(../images/msgA.jpg) no-repeat left center; width:133px; height:33px; text-align:center; margin-left:2px}
+.msgCrumbA {background:url(../images/msgB.jpg) no-repeat left center; width:159px; height:33px; text-align:center; margin-left:-2px}
+.msgCrumb a{ line-height:33px; text-decoration:none; color:#8c8c8c; font-size:15px; font-weight:bold}
+.msgCrumbN{background:url(../images/msgAN.png) no-repeat left center; width:133px; height:33px; text-align:center; margin-left:2px}
+
+/* will be red only in google chrome */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.textSherLinks ul li a:hover, .textSherLinks ul li.actve a {
+    background: url("../images/userArow.png") no-repeat scroll center 27px rgba(0, 0, 0, 0);
+    color: #48a4e1;
+    padding-bottom: 17px;
+}
+}
+
+.userPro{ margin-top:83px}
+.sherText{ background:none; border:none}
+.sherText p{ font-size:23px; font-weight:bold; color:#464646; margin:-19px 63px}
+.userInter{ width:680px}
+.section1{ width:505px}
+.section2{ width:164px;}
+.thisMonth{ text-align:center; background:url(../images/thismonth.jpg) no-repeat; width:161px; height:43px; line-height:43px;}
+.thisMonth a{ text-decoration:none; color:#464646; font-size:15px; font-weight:bold}
+.viewsSection ul li{ background:url(../images/green.jpg) no-repeat left center; line-height:30px}
+
+.viewsSection ul li.likesss{ background:url(../images/blue.jpg) no-repeat left center}
+.viewsSection ul li.comentsss{ background:url(../images/yellow2.jpg) no-repeat left center}
+.viewsSection ul li.sharesss{ background:url(../images/red.jpg) no-repeat left center}
+
+.viewsSection ul li a{ padding-left:28px; color:#969696; font-size:15px; font-weight:bold; text-decoration:none}
+.viewsSection { margin-top:13px; margin-left:10px;}
+.sherMsgs .userInter { margin-right:0; margin-left:15px}
+.stanford{ width:75%; float:left; margin-left:15%; text-align:center; font-weight:bold}
+
+.sherMsgs .makeannounce{ margin-left:10%}
+.sherMsgs .makeannounce a{ margin-bottom:15px}
+.sherMsgs .makeannounce a:hover{ opacity:.8}
+
+.popup { width:100%; height:; border-radius:5px; background:#fff; float:left;}
+
+.popup h3{ text-align:center; line-height:18px; border-bottom:1px solid #e6e6e6; padding:15px 0;}
+.popConetnt{ background:#f7f7f7; width:100% }
+.popBox{ margin:130px auto 15px; width:600px}
+.texts{ width:92%; height:150px; border:1px solid #e6e6e6; background:#fff; padding:20px; resize:none}
+.postBtn{ margin-right:20%; padding-bottom:15px;}
+
+
+.close {
+    left: 28px;
+    position: absolute;
+    top: 18px;
+}
+
+.postviewPop{ width:441px;}
+
+.lkes { width:100%;}
+.ikes {
+    background: none repeat scroll 0 0 #f7f7f7;
+    border: 1px solid #e6e6e6;
+    font-size: 14px;
+    padding: 25px 0;
+    text-align: center;
+    width: 217px;
+	border-left:0
+}
+.ikes a{ font-size: 14px; text-decoration:none; color:#8c8c8c; font-size:15px; text-transform:uppercase}
+.ikesN {
+    background: none;
+    border: none;
+}
+.mthera { width:95%; margin:15px 0; border-bottom:1px solid #e6e6e6; padding-left:5%;}
+.mthera .molagaardPatrick { width:78%; padding-left:3%}
+.molagaardPatrick p span {
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    width: 118px;
+}
+
+.mints{ color:/*#b4b4b4*/;}
+.mthera .cantsbe {
+    float: left;
+    font-size: 20px;
+    margin-left: -44px;
+    margin-top: 15px;
+    width: 120%;
+}
+.chatBox{ width:442px; background:#f7f7f7; margin-top:90px}
+.text {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    color: #e6e6e6;
+    float: left;
+    font-size: 25px;
+    height: 57px;
+    line-height: 18px;
+    margin: 10px 8px;
+    padding: 0 15px;
+    width: 290px;
+}
+
+.chatBox a{ margin-top:8px; float:left;}
+
+.viesw {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color #e6e6e6 -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-radius: 0;
+    border-style: none solid none none;
+    border-width: medium 1px medium medium;
+    margin-bottom: 0;
+    margin-right: 0;
+    padding-right: 0;
+    width: 526px;
+}
+    .black_overlay{
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 120%;
+        background-color:#313131;
+        z-index:1001;
+    }
+    .white_content {
+        display: none;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        width: 80%;
+        height:auto;
+        padding: 0px 0;
+        background-color: white;
+        z-index:1002;
+        overflow: auto;
+		width:1000px;
+    }
+
+.popsecrhs{ width:1000px}
+.chatWraper{ width:100%; height:335px; overflow:scroll}
+.imgArea{ width:35px}
+
+.imgAreaText {
+    position: relative;
+    width: 84%;
+}
+.checkBoxAA{ width:174px}
+.flip {
+    cursor: pointer;
+    float: right;
+    margin: 10px 10px;
+    padding-bottom: 5px;
+    width: auto;
+}
+.proView{ width:300px; border:1px solid #dcdcdc; border-radius:5px; background:#f0f0f0}
+.proView {
+    background:#fefefe;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    float: left;
+    width: 178px;
+}
+.proView li{ line-height:28px; border-bottom:1px solid #e1e8ed; padding:7px 16px}
+.proView a{ color:#66757f}
+.proView a:hover{ opacity:.5}
+
+/*******************************************************************/
+
+.signInbar ul {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    width: 440px;
+}
+.arowBack { margin:15px 0 0 15px;}
+.popBoxN{ margin-top:0}
+.popBoxN p{ margin:5px 0; color:#000}
+.popBoxN a{ margin:5px 15px 15px 0; float:left;}
+.popBoxN a:hover{ opacity:.7}
+.send:hover{ cursor:pointer}
+
+.jes {
+    font-weight: bold;
+    margin: 20px 10px 0 9px;
+    float:left;
+    font-size:20px;
+}
+.popBoxN p.replica{ float:left; width:100%; margin:15px 0}
+.boxR{ width:70px; height:66px; background:#bfbfbf; margin-right:12px;}
+.types{ width:100%; text-align:center; font-size:29px; margin:63px 0 25px 0; color:#000}
+.pops{ width:100%; padding-bottom:110px;}
+.music{ width:33%}
+.popBoxNA{ width:800px;}
+.popBoxNA .music{ width:33%}
+.popBoxNA .music a img{ width:100%}
+.evernts{ margin-left:5%}
+.campPost{ width:915px; text-align:center; margin-bottom:15px;}
+
+.groupA {
+    margin-right: 25px;
+    padding-bottom: 1%;
+    width: 300px;
+}
+.groupAA{ min-height:360px; margin-bottom:10px; text-align:center; width:270px}
+
+.daysAgo{
+width:145px
+padding 16px 0 0 17px
+}
+.daysAgo a{font-size:11px}
+
+.chatWraper {
+height: 335px;
+}
+.box img {
+width: 100%;
+height: 100%;
+border-radius: 5px;
+}
+.notification .noteA {
+padding: 15px 15px;
+}
+.groupAA h2{ font-size:26px; text-align:left; text-transform:capitalize}
+.groupAA h3{ text-align:left}
+.groupA{ margin:0 15px}
+.dashAbord{ padding-bottom:150px}
+/**************************************************************/
+
+@media all and (max-width:2048px){
+	
+	.rightSection{ width:1000px}
+	.contentArea{ width:1000px; position:relative}
+}
+
+@media all and (max-width:1230px){
+	
+.rightSection{ width:80%}
+.logo{ width:18%}
+.searchBar input{ width:85%; height:38px}
+.searchBar{ width:20%; margin-top:17px;}
+.nav {
+    width: 36%;
+}.nav ul{ margin-left:0; float:left;}
+.messageArea{ width:100%}
+.contentArea {
+    width: 80%;
+}
+.searchCon{ width:29%}
+.searchConR{ width:70%}
+.writeRep{ width:100%}
+.textArea{ width:91%}
+
+.molagaardPatrick{ width:}
+.noteA{ width:100%}
+.notification .jordan{ width:100%}
+.noteA p{ margin-left:8%}
+.futraArea{ width:76%}
+.dash { width:96%}
+.barCharts{ width:100%}
+.futraAreaAB{ width:22%}
+.acountMatB {
+    width: 22%;
+}
+.linG{ width:8%;background-size:8%; font-size:11px;}
+.postcard{ padding:10px 0 0 38px; width:70px; font-size:13px; height:auto}
+.postcard a{ margin:0 8px}
+.postcard span{ margin-top:28px; font-size:23px}
+.dash p.selectsss{ margin:12px 10px 0 10px; font-size:15px}
+.frndBox span{ width:80%; font-size:26px; margin-right:8px}
+
+.acountMatA {
+    margin-right: 10px;
+    width: 22%;
+}
+.acountMat {
+    margin-right: 2%;
+    width: 51%;
+}.matricA{ width:100%; margin-right:0}
+.acountMatA p{ margin-bottom:12px; font-size:12px; font-weight:bold; color:#969696}
+
+
+}
+
+@media all and (max-width:1164px){
+	
+	.nav ul li{ margin:0 0 0 10px; padding:margin:0 0 0 10px}
+	.searchCon .searchBar input {
+    width: 90%;
+}
+
+.logo {
+    margin-right: 10px;
+    width: 16%;
+}
+
+.searchBar {
+    margin-top: 17px;
+    width: 18%;
+}
+.patrich{ width:88%}
+.nav {
+    width: 45%;
+}
+
+.nav ul {
+    float: left;
+    margin-left: 10%;
+}
+.patrich{ font-size:12px;}
+
+
+.imgAreaText {
+    position: relative;
+    width: 84%;
+}
+.searchCon {
+    width: 30%;
+}
+.searchConR {
+    width: 69%;
+}
+.molagaardPatrick p span{ width:85px}
+}
+
+@media all and (max-width:1101px){
+	.linG{ padding:11px 14px 11px 49px; width:9%}
+	.frndBox span{ margin-left:19px}
+}
+@media all and (max-width:1036px){
+
+.inbox{ width:26%}
+.nav ul {
+    float: left;
+    margin-left: 4%;
+}.nav {
+    width: 43%;
+}
+.searchBar input{ font-size:13px;}
+.nav ul li a{ font-size:12px;}
+.searchCon {
+    width: 31%;
+}
+
+.searchCon .searchBar {
+    margin: 16px 10px;
+    width: 84%;
+}
+.patrich {
+    width: 91%;
+	
+}
+.cantsbe {
+    float: left;
+    margin: 0 15px 15px;
+    width: 96%;
+}
+.searchConR {
+    width: 68%;
+}
+.molagaardPatrick{ width:}
+.noteA{ width:100%}
+.notification .jordan{ width:100%}
+.noteA p{ margin-left:8%}
+.futraArea{ width:68%}
+.dash { width:94%}
+.barCharts{ width:100%}
+.futraAreaAB{ width:30%}
+
+
+.imgAreaText {
+    width: 82%;
+}
+}
+
+@media all and (max-width:1018px){
+
+.searchBar input {
+    font-size: 12px;
+    height: 32px;
+    width: 80%;
+}
+
+.searchBar {
+    margin-top: 20px;
+}
+.nav ul li a{ font-size:12px;}
+.patrich{ font-size:12px;}
+
+.contentArea {
+    width: 82%;
+}
+.messageArea {
+    width: 100%;
+}
+
+}
+
+@media all and (max-width:1003px){
+	.checkBoxAA {
+width: 155px;
+}
+.linG { width:12%}
+.futraAreaAB {
+width: 23%;
+float: right;
+}
+
+.futraArea {
+width: 75%;
+}
+.buzz{ float:right; margin-right:52px}
+.frndBox a img {
+width: 71%;
+}
+.acountMatA .frndBox{ padding-top:60px}
+.frndBox span {
+text-align: right;
+width: 80%;
+margin: 0;
+width: 92%;
+}
+.matricA{ height:202px}
+.dashWraper {
+width: 290px;
+float: left;
+}
+.futraAreaAB{ width:23%}
+.postcard {
+padding: 15px 0 0 38px;
+width: 88px;
+font-size: 13px;
+height: auto;
+}
+.buzz {
+float: right;
+margin-right: 34px;
+}
+.linG {
+width: 11%;
+background-size: 30%;
+}
+
+
+}
+	
+@media all and (max-width:941px){
+.leftSection{ width:8%}
+.rightSection {
+    width: 75%;
+}
+
+.logo {
+    margin-right: 8px;}
+.nav {
+    width: 41%;
+}
+
+.nav ul li {
+    margin: 0 0 0 6px;
+	padding:0 0 0 6px
+}
+.box{ width:25px; height:25px}
+
+.checkBox p {
+    float: left;
+    font-size: 13px;
+    margin-left: 11px;
+    margin-top: 6px;
+}
+.searchBar {
+    margin-top: 14px;
+}
+.nav ul{ margin-top:20px}
+.header{ height:60px}
+.dropDown{ padding:10px 0}
+.contentArea {
+    width: 75%;
+}
+.msgCrumb {
+    background: url("../images/msgA.jpg") no-repeat scroll left center / 100% auto rgba(0, 0, 0, 0);
+    height: 27px;
+    margin-left: 2px;
+    text-align: center;
+    width: 112px;
+}
+.msgCrumbA {
+    background: url("../images/msgB.jpg") no-repeat scroll left center / 100% auto rgba(0, 0, 0, 0);
+    height: 27px;
+    margin-left: -2px;
+    text-align: center;
+    width: 127px;
+}
+.msgCrumb a{ font-size:12px; line-height:27px;}
+.breadCrumbs{ height:27px}
+.inbox {
+    background-size: 100% auto;
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 26px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-top: 10px;
+    text-transform: uppercase;
+    width: 26%;
+}
+.inboxAA{ margin-top:5px; width:20%}
+.molagaardPatrick p span{ font-size:11px;}
+.cantsbe{ font-size:11px}
+.molagaardPatrick {
+    width: 90%;
+}
+
+.futraArea {
+    width: 67%;
+}
+.futraAreaAB {
+    width: 30%;
+}
+}
+
+@media all and (max-width:880px){
+
+.nav ul li.note{ padding-right:6px}
+.nav ul li a{ font-size:11px}
+.nav {
+    width: 36%;
+}
+.inboxAA{ line-height:22px}
+.patrich{ width:87%; height:64px}
+.patrich .todays {
+    right: 5px;
+    top: 40px;
+}
+
+.chatMsg {
+    background: none repeat scroll 0 0 #54dfc3;
+    border-radius: 5px;
+    color: #fff;
+    float: right;
+    font-size: 12px;
+    margin: 19px 5px 0 0;
+    padding: 7px;
+    width: 58%;
+}
+
+.textArea {
+    width: 91%;
+	margin:8px 12px
+}
+.send {
+    background-size: 100% auto;
+    float: right;
+    margin-bottom: 12px;
+    margin-right: 13px;
+    text-align: right;
+    width: 89px;
+}
+
+}
+@media all and (max-width:854px){
+	.nav {
+    float: right;
+    margin-top: 5px;
+    width: 248px;
+}.nav ul {
+    margin-top: 0;
+}
+.checkBox {
+    float: right;
+    margin-left: 0;
+    margin-right: 21%;
+    margin-top: 23px;
+}
+.header {
+    height: auto;
+}
+.dropDown {
+    padding: 19px 0;
+}
+.logo {
+    width: 25%;
+}
+.searchBar {
+    margin-left: 2%;
+    width: 26%;
+}
+.navCheckWraper {
+    float: right;
+    margin-bottom: 7px;
+    width: 43%;
+}
+.dashbord img {
+    margin: 5px 0;
+}
+.dashbord {
+    font-size: 8px; padding-bottom:5px}
+.groupArea, .notification{ margin-top:11%}
+.cantsbe{ width:auto}
+.inbox{ font-size:11px}
+.groupArea, .notification {
+    margin-top: 13%;
+}}
+
+
+@media all and (max-width:710px){
+
+.searchCon .searchBar input {
+    width: 77%;
+}
+.chatA{ width:96%; margin:5px;}
+.chatMsg{ width:70%}
+.inboxAA {
+    line-height: 12px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+@media all and (max-width:1327px){
+	
+	.searchBar input{ width:100%}
+	.contentArea{ margin-left:7%}
+
+.contentArea{ width:100%}
+
+}
+
+@media all and (max-width:1204px){
+
+.nav ul li{ margin:0 0 0 10px; padding:0 0 0 10px}
+.nav ul li a{ font-size:14px;}
+.contentArea{ margin-left:3%}
+}
+
+@media all and (max-width:1150px){
+.logo{ width:18%}
+.daysAgo{ width:13%; background-size:100%; padding-top:13px; padding-left:12px;}
+.daysAgo a{ font-size:12px}
+.paulG { width:52%}
+.allPosts{ width:14%}
+}
+
+@media all and (max-width:1099px){
+
+	.searchBar input{ width:83%; height:37px}
+.nav ul {
+    float: left;
+    margin-top: 30px;
+	padding-left:5px
+}
+.nav ul li{ margin:0 0 0 8px; padding:0 0 0 8px;}
+.nav ul li a {
+    font-size: 13px;
+}
+.checkBox p{ font-size:15px}
+.searchBar {
+    margin-top: 19px;
+}
+.allPosts {
+    width: 16%;
+}
+.box{ width:30px; height:30px}
+.checkBox p{ margin-left:9px; margin-top:4px}
+}
+
+@media all and (max-width:1023px){
+	
+	.logo {
+    width: 21%;
+}.nav ul li {
+    margin: 0 0 0 12px;
+    padding: 0 0 0 12px;
+}.nav ul li a {
+    font-size: 15px;
+}.checkBox{ margin-left:0}
+
+}
+
+@media all and (max-width:932px){
+.rightSection {
+    width: 83%;
+}.daysAgo a {
+    font-size: 11px;
+}.daysAgo{ padding-top:8px}
+.allPosts {
+    width: 18%;
+}
+.contentArea{ margin-left:0; width:100%}
+.paulG {
+    width: 48%;
+	margin:0 10px;
+}
+.paulG p{ font-size:17px;}
+.daysAgo{ width:16%}
+.daysAgo {
+    padding-top: 12px;
+}
+a.like{ margin-left:14%}
+.contentArea{ padding-bottom:25px}
+.nav { width:45%; text-align:center}
+.nav ul li a {
+    font-size: 13px;
+}
+
+@media all and (max-width:905px){
+
+.searchBar input {
+    height: 29px;
+    width: 82%;
+	font-size:13px;
+}
+.searchBar{ width:174px;}
+.nav{ width:47%}
+
+
+}
+@media all and (max-width:748px){
+
+
+.nav {
+    width: 66%;
+}
+.checkBox {
+    margin-left: 31%;
+}
+.logo {
+    margin-left: 20%;
+    width: 31%;
+}
+.searchBar {
+    margin-top: 24px;
+}.nav {
+    float: none;
+    margin: 0 auto;
+    width: 58%;
+}
+.daysAgo {
+    width: 26%;
+}
+.daysAgo a {
+    font-size: 12px;
+}
+.daysAgo {
+    padding-top: 16px;
+}
+.paulG h2{ margin-left:17%}
+.paulG p {
+    font-size: 13px;
+}
+
+a.like {
+    margin-left: 12%;
+	margin-top:13px;
+}
+
+.allPosts {
+    margin-left: 40%;
+    margin-top: 18px;
+    width: 23%;
+}
+
+
+}
+
+@media all and (max-width:560px){
+
+.rightSection {
+    width: 68%;
+}
+.logo {
+    margin: 5% 0;
+    text-align: center;
+    width: 100%;
+}
+.searchBar {
+    float: none;
+    margin: 9px auto;
+    width: 55%;
+}
+.nav{ width:81%}
+.nav ul li {
+    margin: 0 0 0 5px;
+    padding: 0 0 0 12px;
+}
+.nav ul li a {
+    font-size: 12px;
+}
+.checkBox {
+    margin-left: 26%;
+}
+.contentArea {
+    margin-top: 10px;
+    padding-bottom: 25px;
+}
+.daysAgo {
+    float: none;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 36%;
+}.daysAgo {
+    padding-top: 16px;
+}
+.paulG {
+    margin: 15px 10px;
+    width: 86%;
+}
+.allPosts {
+    margin-left: 25%;
+    margin-top: 0;
+    width: 38%;
+}
+
+}
+
+@media all and (max-width:500px){
+	
+	.leftSection{ width:15%}
+.rightSection {
+    width: 75%;
+}
+.dashbord{ width:100%}
+.dashbord p{ font-size:10px}
+.nav {
+    left: 26%;
+    position: absolute;
+    width: auto;
+}
+.checkBox{ margin-top:23%}
+}
+@media all and (max-width:480px){
+	
+	.leftSection{ width:15%}
+.rightSection {
+    width: 75%;
+}
+.dashbord{ width:100%}
+.dashbord p{ font-size:10px}
+.nav {
+    left: 26%;
+    position: absolute;
+    width: auto;
+}
+.checkBox{ margin-top:23%}
+}
+
+@media all and (max-width:379px){
+.leftSection {
+    width: 100%;
+}
+.rightSection {
+    width: 100%;
+}
+
+.nav {
+    left: 12%;
+    position: absolute;
+    width: auto;
+}
+.allPosts{ margin-left:22%}
+
+
+}
+
+
+@media all and (max-width:320px){
+
+.nav{ left:4%}
+.paulG {
+    margin: 15px 5px;
+    width: 86%;
+}
+.box {
+    height: 22px;
+    margin-left: 22%;
+    width: 22px;
+}
+.paulG h2 {
+    margin-left: 34%;font-size:15px; margin-top:2px}
+	.paulG p{ margin-top:11px;}
+	.allPosts{ width:45%}
+	  .nav {
+    left: 5%;
+    position: absolute;
+    width: 95%;
+}
+.paulG {
+    margin: 15px 5px;
+    width: 86%;
+}
+.allPosts{ width:46%}
+.checkBox {
+    margin-left: 11%;
+    width: 67%;
+}
+
+a.like {
+    margin-left: 10%;
+    margin-top: 13px;
+}
+.daysAgo {
+    padding-top: 12px;
+}
+
+
+}
+
+*/
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<style>
+    .pace .pace-progress {
+        display: none !important;
+    }
+</style>
+<div ng-controller="LoginCtrl">
+    <div class="nav-wrapper-login nav-t-bg">
+        <div class="nav-container-login width-90">
+            <a class="login-logo" href="javascript:void(0)"><img src="assets/icons/login-logo.png">
+            </a>
+            <form ng-submit="login()">
+                <ul class="navbar-login floatRight">
+                    <li class="floatLeft">
+                        <input type="text" class="formInputs-login  login-nav-input fullname" placeholder="Standford email address" ng-model="user.email" >
+                    </li>
+                    <li class="floatLeft">
+                        <div style="position: relative;">
+                            <input type="password" class="formInputs-login  login-nav-input fullname" placeholder="password" ng-model="user.password">
+                            <span class="passrow-icon"></span>
+                        </div>
+                    </li>
+                    <li class="floatLeft">
+                        <input type="submit" class="button-login cGreenBtn-w login-nav-btn" value="Login">
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <div class="clearFix"></div>
+    <div class="sign-up-wrapper">
+        <div class="sign-up-content-wrapper floatLeft">
+            <div class="sign-up-content floatLeft">
+                <p class="sign-up-p floatLeft">Welcome to NerdNation</p>
+                <p class="sign-up-p2 floatLeft">Stay in the know about what’s happening at Stanford. Connect with peers and interest groups on campus, and never have to miss out on anything again.</p>
+            </div>
+            <div class="clearFix"></div>
+            <div class="sign-up-inputs-warraper floatRight">
+                <p class="signup-input-p">Sign up</p>
+                <div class="sign-up-inputs-container">
+                    <input type="text" class="formInputs-login  signup-inputs fullname" placeholder="full name">
+                    <input type="text" class="formInputs-login  signup-inputs fullname" placeholder="Standford email address">
+                    <input type="text" class="formInputs-login  signup-inputs fullname" placeholder="password">
+                </div>
+                <input type="submit" class="button-login blueBtn-send signup-btn" value="Sign up">
+            </div>
+        </div>
+    </div>
+    
+    <div class="signup-footer">
+        <div class="singup-footer-cont">
+            <p class="floatLeft singup-footer-p">About</p>
+            <p class="floatLeft singup-footer-p">Contact</p>
+            <p class="floatLeft singup-footer-p">Privacy</p>
+        </div>
+    </div>
+</div>

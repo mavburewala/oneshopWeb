@@ -1,0 +1,68 @@
+<script>
+    $(document).ready(function() {
+        $("#flip").click(function() {
+            $("#panel").slideToggle("slow");
+        });
+
+    });
+</script>
+<div class="leftSection fleft">
+    <div class="dropDown fleft">
+
+        <div id="flip">
+            <img src="assets/images/btn.jpg" />
+        </div>
+
+        <div id="panel">
+
+            <div class="dashbord dashesA">
+                <div ui-sref='dashboard'>
+                    <img src="assets/images/dashbord.jpg" />
+                    <br />
+                    <p>DASHBOARD</p>
+                </div>
+            </div>
+
+            <div class="dashbord">
+                <div ui-sref='posts'>
+                    <img src="assets/images/posts.jpg" />
+                    <br />
+                    <p>my posts</p>
+                </div>
+            </div>
+
+            <div class="dashbord">
+                <div ui-sref='networks'>
+                    <img src="assets/images/group.jpg" />
+                    <br />
+                    <p>my groups</p>
+                </div>
+            </div>
+
+            <div class="dashbord">
+                <div ui-sref="profile({ Id:window.userId })">
+                    <img src="assets/images/profile.jpg" />
+                    <br />
+                    <p>my profile</p>
+                </div>
+            </div>
+
+            <div class="dashbord">
+                <div ui-sref="network.posts({ Id:2104 })">
+                    <img src="assets/images/team.jpg" />
+                    <br />
+                    <p>my team</p>
+                </div>
+            </div>
+
+            <div class="dashbord dashAbord">
+                <img src="assets/images/help.jpg" />
+                <br />
+                <p>i need help</p>
+            </div>
+
+            <div class="dashbordMargens"></div>
+        </div>
+    </div>
+</div>
+

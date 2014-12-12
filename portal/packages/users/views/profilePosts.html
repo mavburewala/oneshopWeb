@@ -1,0 +1,29 @@
+<div class="futura futuraNew fleft"></div>
+<div class="contentAreaFor" ng-controller="userPostsCtrl">
+    <div style="clear:both;" ng-repeat="post in campusPosts">
+        <div class="daysAgo fleft">
+            <a href="#">{{post.time}}</a>
+        </div>
+
+        <div class="paulG amys fleft">
+            <div class="box">
+                <img src="{{post.by.profile_image}}" />
+            </div>
+            <h2>{{post.by.name}}</h2>
+            <p>{{post.text}}</p>
+
+            <a href="#">
+                <img ng-show="post.image" src="{{post.image}}" style="width:100%;height:auto" />
+            </a>
+
+            <a class="like" href="#">Like</a>
+            <a class="like" href="#">Comment</a>
+            <a class="like" href="#">Share</a>
+
+        </div>
+    </div>
+
+  <div>
+</div>
+
+

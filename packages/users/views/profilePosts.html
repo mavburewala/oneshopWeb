@@ -1,0 +1,77 @@
+
+<div class="wall-main-wrapper">
+    <div class="wall-wrapper">
+        <div ng-controller="userPostsCtrl" class="wall-container">
+            <div ng-repeat="post in campusPosts" class="post-container margin-left-72px">
+            <div >
+                    <div class="user-ifno">
+                        <a href="javascript:void(0)"><img src="{{post.by.profile_image}}">
+
+                            <div class="floatLeft user-info-name">
+                                <p class="text-username">{{window.UserName}}</p>
+
+                                <div class="clearFix"></div>
+                                <span>{{post.time}}</span>
+                            </div>
+                            <div class="clearFix"></div>
+                        </a>
+
+                    </div>
+                    <div style="overflow: hidden;" class="post-image-container">
+                        <a href="javascript:void(0)"><img style="width: 100%; height: auto;" src="{{post.image}}"></a>
+                    </div>
+                    <div class="post-info-container">
+                        <div class="post-info">
+                            <p>{{post.text}}</p>
+                        </div>
+                    </div>
+                    <div class="post-func-container">
+                        <div class="post-func-icons">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)"><img class="floatLeft" src="assets/icons/heart-icon.png">
+
+                                        <p class="floatLeft">30</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img class="floatLeft" src="assets/icons/comment-icon.png">
+
+                                        <p class="floatLeft">30</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img class="floatLeft" src="assets/icons/shear-icon.png">
+                                        <!--<p class="floatLeft">30</p>-->
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!--<div class="show-comments-container">
+                        <div class="show-commnets">
+                            <a href="javascript:void(0)"><p>Show comments...</p></a>
+                        </div>
+
+                    </div>-->
+                    <div class="comments-text-box">
+                        <div class="text-box">
+                            <form>
+                                <input type="text" class="formInputs" placeholder="Write a comment..."/>
+                                <input type="submit" class="button cGreenBtn" value="post">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="clearFix"></div>
+            
+
+
+        </div>
+    </div>
+
+
+</div>

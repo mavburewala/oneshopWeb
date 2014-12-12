@@ -1,0 +1,97 @@
+<div class="rightSection fleft" >
+            <div class="logo fleft">
+                <a ui-sref='wall'>
+                    <img src="assets/images/logo.png" />
+                </a>
+            </div>
+           <!-- <div class="searchBar fleft">
+                <input type="text" class="search" placeholder="search" />
+            </div>-->
+            
+            
+                                
+                                
+            <div class="navCheckWraper">
+            
+             <div class="nav nav2 fleft">
+                <ul>
+                    <li><a href="#">
+                        <span class="icoSearch fleft"><img src="assets/images/search.jpg" /></span>
+                        <span class="icoSearch2 fleft">SEARCH</span>
+                    </a></li>
+                               
+                    <li><a class="actve" ui-sref='wall'>Campus</a>
+                    </li>
+                    <li><a ui-sref='messages'>Messages</a>
+                      <span ng-if="newMessage.length!=0" class="redMsg redMsgN">{{newMessage.length}}</span>
+                    </li>
+                    <li class="note"><a ui-sref='notifications'>Notifications</a>
+                      <span ng-if="notification.length!=0" class="redMsg redMsgN">{{notification.length}}</span>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="checkBox checkBoxAA fleft">
+                          <div class="box"><img src="{{window.UserImage}}"/></div>
+                      <div class="flip">
+                        {{window.UserName}}
+                     </div>
+					
+                      <div class="panel">
+     					
+                        <div class="proView">
+                       		<ul>
+                            	<li class="viewpro"><a ui-sref="profile.posts({ Id:window.userId })">View Profile</a></li>
+                            	<li class="setigs"><a href="#">Settings</a></li>
+                            	<li class="setigsA"><a ui-sref='auth.logout'>LogOut</a></li>
+                            </ul>
+                        </div>
+                     </div>
+                </div>
+    <!--         <div class="checkBox fleft">
+                <div class="box"></div>
+                <p>Evan Zuckerberg</p>
+                
+               
+            </div> -->
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $(".proView").hide("fast");
+             $(".flip").click(function(){
+                $(".proView").slideToggle("slow");
+             });
+			 
+			 
+
+             /*Setting the Navbar Active Links*/
+             var currActive = $(".nav").find(".actve");
+             currActive.removeClass("actve");
+
+             var url = document.URL;
+              url = url.split('/');
+              url = url[url.length - 1];
+              if(url === "wall"){
+                  $(".nav li a:contains('Campus')").addClass("actve");
+              }
+              else if(url === "messages"){
+                  $(".nav li a:contains('Messages')").addClass("actve");
+              }
+              else if(url === "notifications"){
+                  $(".nav li a:contains('Notifications')").addClass("actve");
+              } 
+              else{
+                  
+              }
+
+              $(".nav li a").click(function(){
+                var currActive = $(".nav").find(".actve");
+                currActive.removeClass("actve");
+
+                $(this).addClass("actve")
+              });
+
+          });
+        </script>

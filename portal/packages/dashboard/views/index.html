@@ -1,0 +1,86 @@
+<div ng-controller="dashboardCtrl" class="contentArea groupArea groupAreaA">
+             
+             <div class="futura futuraNew fleft">
+                           <div class="breadCrumbs fleft">
+                	<div class="msgCrumb fleft"><a href="#">DASHBOARD</a></div>
+                	<div class="msgCrumb msgCrumbA fleft"><a href="#">{{window.UserName}}</a></div>
+                    <!--
+                    <ul>
+                    	<li class="mesg"><a href="#">MESSAGES</a></li>
+                    	<li class="act"><a class="" href="#">SHERIDAN LAY</a></li>
+                    </ul>-->
+                </div>
+
+          <div class="futraArea fireside fleft">  
+                <p style="font-size:12px; font-weight:bold; color:#969696">AT A GLANCE</p>
+          <div class="lineGrapg dash fleft">
+               <div class="linG fleft">{{viewTitle}}</div>
+                <p class="selectsss">Select:</p>
+             <div class="dashWraper">   
+                <div ng-click="showPostsGraph()" class="posts postcard fleft"><a href="#">Posts</a><br />
+				<span id="totalPosts"></span></div>
+                
+                 <div ng-click="showViewsGraph()" class="posts postcard view fleft"><a href="#">views</a><br />
+				<span id="totalLikes" style="color:#52b3d9"></span></div>
+                
+                 <div ng-click="showInteractionsGraph()" class="posts postcard interactions fleft"><a href="#">Interactions</a><br />
+				<span id="totalInteractions" style="color:#65c6bb"></span></div>
+                
+                 <div ng-click="showBuzzGraph()" class="posts postcard view buzz fleft"><a href="#">Buzz Score</a><br />
+				<span id="totalRsvps" style="color:#f15c68"></span></div>
+                </div>
+                
+              <div class="barCharts fleft">
+       	         <!-- <img src="assets/images/charts.jpg" />	 -->
+                 <figure style="width: 730px; height: 300px;" id="dashboardGraph"></figure>
+              </div>
+          </div>
+         </div><!--fireside-->
+             
+             <div class="futraArea futraAreaAB">
+                 <p style="font-size:12px; font-weight:bold; color:#969696">CALENDAR TOGGLE</p>
+                 <div class="futraAreaAAText forHeight fleft">
+                 	<select class="select" ng-model="ddlFilterType" ng-change="applyFilter()">
+                    	<option>Today</option>
+                    	<option>This Week</option>
+                    	<option>This Month</option>
+                      <option>All Time</option>
+                    </select>
+                 </div>
+                 
+             </div><!--futraAreaAB-->
+             
+             
+           </div>
+              
+          <div class="acoutWraper fleft">
+          	
+            <div class="acountMat fleft">
+            <p>ACCOUNT METRICS</p>
+            <div class="matricA fleft"></div>
+          </div>
+        
+            <div class=" acountMatA fleft">
+            <p>CAMPUS TRENDS</p>
+           <div class="frndBox fleft"><a href="#"><img src="assets/images/yes1.jpg" /></a>
+           <br />
+		       <span> TOP POSTS</span>
+        
+        </div>
+          </div>
+        
+        
+            <div class=" acountMatA acountMatB fleft">
+             <p>&nbsp;</p>
+             <div class="frndBox fleft"><a href="#"><img src="assets/images/yes2.jpg" /></a>
+           <br />
+		       <span> TOP USERS</span>
+        
+          </div>
+        
+        
+          </div>
+          
+             
+           </div>     
+         </div>

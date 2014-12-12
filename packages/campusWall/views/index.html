@@ -1,0 +1,514 @@
+<style>
+    /*.mousepadscroll{
+                    overflow-y: scroll;
+                }*/
+    
+    #wrapper {
+        /*position: absolute;*/
+        
+        top: 0px;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        background: #f5f5f5;
+        overflow: auto;
+        height: 30%;
+        float: left;
+    }
+    #scroller {
+        overflow: auto;
+        width: 6500px;
+        height: 20%;
+        float: left;
+        padding: 0;
+    }
+    #wrapper:hover div:nth-child(4) {
+        opacity: 1 !important;
+    }
+    #wrapper:hover #prev {
+        transition-duration: 350ms;
+        opacity: 1 !important;
+    }
+    #wrapper:hover #next {
+        transition-duration: 350ms;
+        opacity: 1 !important;
+    }
+    #prev {
+        margin: 181px 0 0 0;
+        z-index: 99999999;
+        cursor: pointer;
+        position: absolute;
+        left: 20px;
+        opacity: 0;
+        transition-duration: 0ms;
+    }
+    #next {
+        margin: 181px 0 0 0;
+        z-index: 99999999;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        opacity: 0;
+        transition-duration: 0ms;
+    }
+    #prev img {
+        width: 25px;
+        height: 43px;
+        opacity: 0.8;
+    }
+    #next img {
+        width: 25px;
+        height: 43px;
+        opacity: 0.8;
+    }
+</style>
+<div class="clearFix"></div>
+<!--<div class="over-flow-hidden">-->
+<div class="" id="wrapper" ng-controller="LiveCtrl">
+    <!--<div class="slider-wrapper">-->
+    <div class="slider-wrapper" id="scroller">
+        <div ng-repeat="live in campusLive" class="item-box  floatLeft" id="myItems">
+            
+            <a href="javascript:void(0)" style="width:300px; overflow:hidden"><div style="margin:auto"><img style="min-width:300px;min-height:155px" src="{{live.image}}"></div>
+                </a>
+
+            <div class="item-box-title">
+                <p class="title-text ">{{live.text}}</p>
+            </div>
+            <div class="item-box-info ">
+                <p class="info-text ">{{live.time}}</p>
+            </div>
+        </div>
+    </div>
+    <div id="prev" class="floatLeft" onclick="myScroll.scrollToPage('prev', 0);return false">
+        <img src="assets/icons/left-icon.png">
+    </div>
+    <div id="next" class="floatRight" onclick="myScroll.scrollToPage('next', 0);return false">
+        <img src="assets/icons/right-icon.png">
+    </div>
+</div>
+<div class="clearFix"></div>
+<div class="wall-main-wrapper" ng-controller="wallCtrl">
+    <div class="wall-wrapper">
+            <div class="buttons-container">
+            <div class="buttons">
+                <input ng-click="PartyClicked()" type="submit" class="btn blueBtn" value="Party" id='party'>
+            </div>
+            <div class="buttons">
+                <input ng-click="MusicClicked()" type="submit" class="btn purpleBtn" value="Music" id='music'>
+            </div>
+            <div class="buttons">
+                <input ng-click="SportsClicked()" type="submit" class="btn redBtn" value="Sports" id='sports'>
+            </div>
+            <div class="buttons">
+                <input ng-click="TheaterClicked()" type="submit" class="btn greenBtn" value="Theater" id='theater'>
+            </div>
+            <div class="buttons">
+                <input ng-click="SpeakerClicked()" type="submit" class="btn yellowBtn" value="Speaker" id='speaker'>
+            </div>
+            <div class="buttons">
+                <input ng-click="AllPostsClicked()" type="submit" class="btn cGreenBtn-w" value="All Post" id='allposts'>
+            </div>
+
+        </div>
+        <div class="wall-container">
+            <div class="creat-post-wrapper">
+                        <div class="creat-post-container floatLeft">
+                            <a href="javascript:void(0)" class="creat-post">
+                                <img src="assets/icons/create-post.png">
+                                <p class="text">Create a new post</p>
+                            </a>
+                            <div class="floatRight close-btn">
+                            <a href="javascript:void(0)" class="floatRight">
+                                <img src="assets/icons/cross-icon.png">
+                            </a>
+                            </div>
+                            <div class="creating-post-container floatLeft">
+                                <div class="creating-post-btns floatLeft">
+                                    <div class="creating-post-buttons floatLeft">
+                                        <input type="submit" class="creating-post-btn yellowBtn btn-color-yellow event-btn floatLeft" value="Event">
+                                        <div class="event-overlay event-btn"></div>
+                                    </div>
+                                    <div class="creating-post-buttons floatLeft">
+                                        <input type="submit" class="creating-post-btn blueBtn btn-color-blue announce-btn floatLeft" value="Announcement">
+                                        <div class="anounce-overlay announce-btn"></div>
+                                    </div>
+                                    <div class="creating-post-buttons floatLeft">
+                                        <input type="submit" class="creating-post-btn cGreenBtn btn-color-green floatLeft general-btn" value="General">
+                                        <div class="gene-overlay general-btn"></div>
+                                    </div>
+                                </div>
+                                <div class="creating-newpost-area newpost floatLeft">
+                                  <p>What kind of post is this ?</p>
+                                    <img src="assets/icons/creating-post-icon.png">
+                                </div>
+                                <div class="creating-newpost-area general floatLeft">
+                                <div class="general-post-textarea floatLeft">
+                                <textarea class="general-textarea" name="general" placeholder="What's Up... ?"></textarea>
+                                </div>
+                                <div class="general-post-fileinput floatLeft">
+                                    <p>OPTIONAL EXTRAS</p>
+                                    <label for="general-postinput" class="general-post-lable">
+                                        <img src="assets/icons/general-upload-icon.png"/>
+                                    </label>
+                                    <input id="general-postinput" type="file"/>
+                                </div>
+                                </div>
+                                <div class="creating-newpost-area announcement floatLeft">
+                                    <div class="announce-post-textarea floatLeft">
+                                        <textarea class="announce-textarea" name="general" placeholder="Type announcement..."></textarea>
+                                    </div>
+                                    <div class="announce-post-fileinput floatLeft">
+                                        <p>OPTIONAL EXTRAS</p>
+                                        <label for="announce-postinput" class="announce-post-lable">
+                                            <img src="assets/icons/general-upload-icon.png"/>
+                                        </label>
+                                        <input id="announce-postinput" type="file"/>
+                                        <a href="javascript:void(0)" class="location">
+                                            <img src="assets/icons/location-con.png" class="location-img"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="creating-newpost-area event floatLeft">
+                                    <div class="event-calander floatLeft">
+                                        <p>What is this event ?</p>
+                                    </div>
+                                    <div class="event-calander-data floatLeft">
+                                        <p class="event-day floatLeft">THURSDAY</p>
+                                        <p class="event-date floatLeft">4</p>
+                                        <span class="date floatLeft">th</span>
+                                    </div>
+                                    <div class="datapicer-backgroud floatLeft">
+                                    <div id="datepicker"></div>
+                                    </div>
+                                </div>
+                                <div class="creating-newpost-area event-next floatLeft">
+                                        <p class="event-next-p">WHAT KIND OF EVENT IS THIS?</p>
+                                    <div class="event-buttons-container floatLeft">
+                                        <div class="buttons floatLeft">
+                                            <input type="submit" class="btn blueBtn event-nextbtn-hw event-next-btn2" value="Party">
+                                        </div>
+                                        <div class="buttons floatLeft">
+                                            <input type="submit" class="btn purpleBtn event-nextbtn-hw event-next-btn2" value="Music">
+                                        </div>
+                                        <div class="buttons floatLeft">
+                                            <input type="submit" class="btn redBtn event-nextbtn-hw event-next-btn2" value="Sports">
+                                        </div>
+                                        <div class="buttons floatLeft">
+                                            <input type="submit" class="btn greenBtn event-nextbtn-hw event-next-btn2" value="Theater">
+                                        </div>
+                                        <div class="buttons floatLeft">
+                                            <input type="submit" class="btn yellowBtn event-nextbtn-hw event-next-btn2" value="Theater">
+                                        </div>
+                                        <div class="buttons floatLeft">
+                                            <input type="submit" class="btn grayBtn event-nextbtn-hw event-next-btn2" value="Other">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="creating-newpost-area event-next-2 floatLeft">
+                                    <div class="announce-post-textarea floatLeft">
+                                        <input type="text" class="event-formInputs floatLeft" placeholder="Event title">
+                                        <textarea class="even-textarea" name="general"
+                                                  placeholder="Event description"></textarea>
+                                    </div>
+                                    <div class="announce-post-fileinput floatLeft">
+                                        <p>OPTIONAL EXTRAS</p>
+                                        <label for="event-postinput" class="announce-post-lable">
+                                            <img src="assets/icons/general-upload-icon.png"/>
+                                        </label>
+                                        <input id="event-postinput" type="file"/>
+                                        <a href="javascript:void(0)" class="location">
+                                            <img src="assets/icons/location-con.png" class="location-img"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="creat-post-nav floatLeft">
+                                <a href="javascript:void(0)" class="floatLeft prev"></a>
+                                <a href="javascript:void(0)" class="floatLeft next">NEXT</a>
+                                </div>
+                            </div>
+                            <div class="clearFix"></div>
+                        </div>
+                        </div>
+                        <div class="clearFix"></div>
+            <div class="post-container" ng-repeat="post in campusPosts" style="height:auto">
+                <div class="user-ifno">
+                    <a href="javascript:void(0)"><img height="35px" width="35px" src="{{post.by.profile_image}}">
+
+                        <div class="floatLeft user-info-name">
+                            <p class="text-username">{{post.by.name}}</p>
+
+                            <div class="clearFix"></div>
+                            <span>{{post.time}}</span>
+                        </div>
+                        <div class="clearFix"></div>
+                    </a>
+
+                </div>
+                <div class="post-image-container" style="clear: both">
+                    <a href="javascript:void(0)" style="height:auto" ng-show="post.image"><img src="{{post.image}}" style="width:100%;height:auto">
+                    </a>
+                </div>
+                <div class="post-info-container">
+                    <div class="post-info">
+                        <p>{{post.text}}</p>
+                    </div>
+                </div>
+                <div class="post-func-container">
+                    <div class="post-func-icons">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)"><img class="floatLeft" src="assets/icons/heart-icon.png">
+
+                                    <p class="floatLeft">{{post.likesCount}}</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-post="{{id}}" ng-click="showComments($index, $event)" href="javascript:void(0)" class="displaycomments"><img class="floatLeft" src="assets/icons/comment-icon.png">
+
+                                    <p class="floatLeft">{{post.commentCount}}</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"><img class="floatLeft" src="assets/icons/shear-icon.png">
+                                    <!--<p class="floatLeft">30</p>-->
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div  class="page">
+                <div  class="content_container comments-scrollbar">
+                    <div ng-repeat="comment in post.comments" class="content">
+                        <a href="javascript:void(0)" class="use-comment-image">
+                            <img src="{{comment.profileImage}}">
+                        </a>
+                        <p class="user-comment-name">{{comment.name}}</p>
+                        <p class="floatLeft msg">{{comment.txt}}
+                        </p>
+                    </div>
+                </div>
+                </div>
+                <div class="comments-text-box">
+                    <div class="text-box">
+                        <form class="commentsForm" ng-submit = "addComment($index, $event, txtComment)">
+                            <input name="txtComment" type="text" class="formInputs txtAddComment" placeholder="Write a comment..." ng-model="txtComment" />
+                            <input type="submit" class="button cGreenBtn addComment" value="post">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<!--<script type="text/javascript"src="assets/js/jquery.trackpad-scroll-emulator.min.js"></script>-->
+<script type="text/javascript">
+    // $(function () {
+    //     $("#datepicker").datepicker({
+    //         dateFormat: 'DD, d',
+    //         onSelect: function (dateText, inst) {
+    //             $('.event-calander').hide();
+    //             $('.event-calander-data').fadeIn();
+    //             $('.event-day').html("");
+    //             $('.event-date').html("");
+    //             var day = dateText.split(",");
+    //             var weekday = day[0];
+    //             var mnthdate = day[1];
+    //             $('.event-day').append(weekday);
+    //             $('.event-date').append(mnthdate);
+    //             $('.next').html('NEXT').addClass('event-next-btn');
+    //             $('.next').html('NEXT').css('color', '#4cdbbe').fadeIn(1000);
+    //             var glow = $('.event-next-btn');
+    //             setInterval(function () {
+    //                 glow.hasClass('glow') ? glow.removeClass('glow') : glow.addClass('glow');
+    //             }, 1000);
+    //         }
+    //     });
+    // });
+
+
+
+// $(document).ready(function () {
+               /*$("body").delegate('.displaycomments', 'click', function () {
+               $(this).parent().parent().parents('.post-container').find('.show-comments-container').fadeToggle();
+               });*/
+    /*$("body").delegate('.comment-active', 'click', function () {
+        $(this).parent().parent().parents('.post-container').find('.comment-active').addClass('displaycomments');
+        $(this).parent().parent().parents('.post-container').find('.displaycomments').removeClass('comment-active');
+        $(this).parent().parent().parents('.post-container').find('.show-comments-container').fadeOut();
+    });
+    $("body").delegate('.displaycomments', 'click', function () {
+        $(this).parent().parent().parents('.post-container').find('.show-comments-container').fadeIn();
+        $(this).parent().parent().parents('.post-container').find('.displaycomments').addClass('comment-active');
+        $(this).parent().parent().parents('.post-container').find('.displaycomments').removeClass('displaycomments');
+
+    });*/
+//     $("body").delegate('.creat-post', 'click', function () {
+//                 $('.close-btn').fadeIn();
+//                 $('.creating-post-container').fadeIn();
+//                 $('.next').html('');
+//                 });
+//                 $("body").delegate('.close-btn', 'click', function () {
+//                 $('.close-btn').fadeOut();
+//                 $('.creating-post-container').fadeOut();
+//                 });
+//                 $("body").delegate('.general-btn', 'click', function () {
+//                     $('.announce-btn').removeClass('txt-color');
+//                     $('.event-btn').removeClass('txt-color');
+//                     $('.gene-overlay').removeClass('overlay-btn');
+//                     $('.event-overlay').addClass('overlay-btn');
+//                     $('.anounce-overlay').addClass('overlay-btn');
+//                     $('.general-btn').addClass('txt-color');
+//                     $('.newpost').hide();
+//                     $('.announcement').hide();
+//                     $('.event-next').hide();
+//                     $('.event').hide();
+//                     $('.event-next-2').hide();
+//                     /*$('.general').fadeIn();*/
+//                     $('.general').show('slide', {direction: 'left'}, 500);
+//                     $('.next').html('NEXT').removeClass('event-next-btn');
+//                     $('.next').html('NEXT').removeClass('event-next-btn2');
+//                     $('.prev').html('BACK').removeClass('event-prev');
+//                     $('.prev').html('BACK').removeClass('event-prev-2');
+//                     $('.prev').html('BACK');
+//                     $('.next').html('POST').css('color','#4cdbbe');
+
+//                 });
+//                 $("body").delegate('.announce-btn', 'click', function () {
+//                     $('.general-btn').removeClass('txt-color');
+//                     $('.event-btn').removeClass('txt-color');
+//                     $('.anounce-overlay').removeClass('overlay-btn');
+//                     $('.gene-overlay').addClass('overlay-btn');
+//                     $('.event-overlay').addClass('overlay-btn');
+//                     $('.announce-btn').addClass('txt-color');
+//                     $('.newpost').hide();
+//                     $('.general').hide();
+//                     $('.event-next').hide();
+//                     $('.event').hide();
+//                     $('.event-next-2').hide();
+//                     /*$('.announcement').fadeIn();*/
+//                     $('.announcement').show('slide', {direction: 'left'}, 500);
+//                     $('.next').html('NEXT').removeClass('event-next-btn');
+//                     $('.next').html('NEXT').removeClass('event-next-btn2');
+//                     $('.prev').html('BACK').removeClass('event-prev');
+//                     $('.prev').html('BACK').removeClass('event-prev-2');
+//                     $('.prev').html('BACK');
+//                     $('.next').html('POST').css('color','#4cdbbe');
+//                 });
+//                 $("body").delegate('.event-btn', 'click', function () {
+//                     $('.general-btn').removeClass('txt-color');
+//                     $('.announce-btn').removeClass('txt-color');
+//                     $('.event-overlay').removeClass('overlay-btn');
+//                     $('.anounce-overlay').addClass('overlay-btn');
+//                     $('.gene-overlay').addClass('overlay-btn');
+//                     $('.event-btn').addClass('txt-color');
+//                     $('.newpost').hide();
+//                     $('.general').hide();
+//                     $('.announcement').hide();
+//                     $('.event-next').hide();
+//                     $('.event-next-2').hide();
+//                     $('.event').show('slide', {direction: 'left'}, 500);
+//                     $('.prev').html('');
+//                     $('.next').html('NEXT').css('color','#ababab');
+//                     $('.next').html('NEXT').addClass('');
+//                 });
+//                 $("body").delegate('.event-next-btn', 'click', function () {
+//                     $('.event').hide();
+//                     /*$('.event-next').fadeIn();*/
+//                     $('.event-next').show('slide', {direction: 'left'}, 500);
+//                     $('.prev').html('BACK');
+//                     $('.prev').html('BACK').addClass('event-prev');
+//                     $('.next').html('NEXT').css('color', '#ababab');
+//                     $('.next').html('NEXT').removeClass('event-next-btn');
+//                     $('.next').html('NEXT').addClass('event-next-btn2');
+//                 });
+//                 $("body").delegate('.event-prev', 'click', function () {
+//                     $('.event-calander-data').hide();
+//                     $('.event-day').html("");
+//                     $('.event-date').html("");
+//                     $('.date').html("");
+
+//                     $('.event-calander').fadeIn();
+
+//                     $('.event').show('slide', {direction: 'left'}, 500);
+//                     $('.event-next').hide();
+//                     $('.next').html('NEXT').removeClass('event-next-btn2');
+//                     $('.prev').html('').removeClass('event-prev');
+//                     $('.next').html('NEXT').removeClass('event-next-btn');
+//                 });
+//                 $("body").delegate('.event-next-btn2', 'click', function () {
+//                     $('.event-next').hide();
+//                     /*$('.event-next-2').fadeIn();*/
+//                     $('.event-next-2').show('slide', {direction: 'left'}, 500);
+//                     $('.prev').html('BACK');
+//                     $('.prev').html('BACK').removeClass('event-prev');
+//                     $('.prev').html('BACK').addClass('event-prev-2');
+//                     $('.next').html('POST').css('color','#4cdbbe');
+//                 });
+//                 $("body").delegate('.event-prev-2', 'click', function () {
+//                     /*$('.event-next').fadeIn();*/
+//                     $('.event-next').show('slide', {direction: 'left'}, 500);
+//                     $('.event-next-2').hide();
+//                     $('.prev').html('BACK').addClass('event-prev');
+//                     $('.prev').html('BACK').removeClass('event-prev-2');
+//                     $('.next').html('NEXT').css('color','#ababab');
+//                 });
+//                /*var lenght = $(".item-box").length;
+//                var width = $(".item-box").css('width');
+//                width = width.substring(0,3);
+//                var totalwidth = (width + 25) * lenght;
+//                $('#scroller').css('width', totalwidth + 'px');*/
+
+
+//                $(window).resize(function () {
+//                    var lenght = $(".item-box").length;
+//                    var width = $(".item-box").width();
+//                    var totalwidth = (width + 25) * lenght;
+//                    $('#scroller').css('width', totalwidth + 'px');
+//                });
+
+
+//                $(function () {
+//                    $("#wrapper").mousewheel(function (event, delta) {
+//                        if (delta === -1) {
+//                            myScroll.scrollToPage('next', 0);
+//                        } else {
+//                            myScroll.scrollToPage('prev', 0)
+//                        }
+//                        event.preventDefault();
+//                    });
+//                });
+//            });
+
+
+//     $(window).resize(function() {
+//         var lenght = $(".item-box").length;
+//         var width = $(".item-box").width();
+//         var totalwidth = (width + 25) * lenght;
+//         $('#scroller').css('width', totalwidth + 'px');
+//     });
+
+
+
+
+//     var myScroll;
+//     $("#next").click(function(){
+//         console.log($("#wrapper").scrollLeft());
+//         myScroll=$("#wrapper").scrollLeft();
+//         myScroll+=800;
+//         $("#wrapper").animate({scrollLeft: myScroll}, 800);
+// });
+//     $("#prev").click(function(){
+//         console.log($("#wrapper").scrollLeft());
+//         myScroll=$("#wrapper").scrollLeft();
+//         myScroll-=800;
+//         $("#wrapper").animate({scrollLeft: myScroll}, 800);
+//         //$("#wrapper").scrollLeft(myScroll);
+// });
+</script>
