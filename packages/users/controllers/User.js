@@ -1,5 +1,5 @@
 'use strict';
-angular.module('gleepostweb.users')
+angular.module('oneShopWeb.users')
     .controller('LoginCtrl', ['$scope', '$rootScope', '$http', '$location', 'Auth','$state','Profile','$timeout','$cookieStore',
         function($scope, $rootScope, $http, $location, Auth,$state,Profile,$timeout,$cookieStore) {
             // This object will be filled by the form

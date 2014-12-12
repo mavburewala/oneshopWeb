@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('gleepostweb.campusWall', []);
+angular.module('oneShopWeb.campusWall', []);

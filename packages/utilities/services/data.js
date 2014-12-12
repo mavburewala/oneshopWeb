@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gleepostweb.utilities').factory('gleepostWebUtilities', [
+angular.module('oneShopWeb.utilities').factory('oneShopWebUtilities', [
 
   function() {
     return {
@@ -10,7 +10,7 @@ angular.module('gleepostweb.utilities').factory('gleepostWebUtilities', [
 ]);
 
 
-angular.module('gleepostweb.utilities').factory('data',['settings',function(settings) {
+angular.module('oneShopWeb.utilities').factory('data',['settings',function(settings) {
   	var initInjector = angular.injector(['ng']);
 	var $http = initInjector.get('$http');
   var $q=initInjector.get('$q');

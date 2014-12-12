@@ -1,9 +1,9 @@
 'use strict';
-angular.module('gleepostweb.campusWall')
+angular.module('oneShopWeb.campusWall')
     .controller('wallCtrl', ['$scope', '$rootScope', '$http', '$location', 'wall','$interval',
         function($scope, $rootScope, $http, $location, wall,$interval) {
 
-            var injector = angular.injector(['gleepostweb.utilities']);
+            var injector = angular.injector(['oneShopWeb.utilities']);
             var util = injector.get('util');
 
             window.globalVar = "Nadeem";

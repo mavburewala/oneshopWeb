@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gleepostweb.main').controller('IndexController', ['$scope', 'Global',
+angular.module('oneShopWeb.main').controller('IndexController', ['$scope', 'Global',
   function($scope, Global) {
     $scope.global = Global;
   }
@@ -8,7 +8,7 @@ angular.module('gleepostweb.main').controller('IndexController', ['$scope', 'Glo
 
 
 
-angular.module('gleepostweb').controller('SuperMainController', ['$scope','$state','$rootScope',
+angular.module('oneShopWeb').controller('SuperMainController', ['$scope','$state','$rootScope',
   function($scope, $state,$rootScope) {
     $rootScope.currentState = $state.$current.name;
   }

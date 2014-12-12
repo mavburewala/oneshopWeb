@@ -1,4 +1,4 @@
-angular.module('gleepostweb.utilities').factory('socketData', [ '$rootScope','settings','$cookieStore', function($rootScope,settings,$cookieStore) {
+angular.module('oneShopWeb.utilities').factory('socketData', [ '$rootScope','settings','$cookieStore', function($rootScope,settings,$cookieStore) {
     var initInjector = angular.injector(['ng']);
     var $http = initInjector.get('$http');
     var $q=initInjector.get('$q');

@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('gleepostweb.utilities', []);
+angular.module('oneShopWeb.utilities', []);

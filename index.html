@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
    
-    <title>Gleepost</title>
+    <title>OneShopWeb</title>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     <meta name="keywords" content="node.js, express, mongoose, mongodb, angularjs, swig">
     <meta name="description" content="MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).">
 
     <meta property="fb:app_id" content="APP_ID">
-    <meta property="og:title" content="Gleepost - Front-Page">
-    <meta property="og:description" content="Gleepost - A Modern Social Network.">
+    <meta property="og:title" content="oneShopWeb - Front-Page">
+    <meta property="og:description" content="oneShopWeb - A Modern Social Network.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="APP
     _URL">
@@ -21,26 +21,12 @@
     <meta property="fb:admins" content="APP_ADMIN"> 
     <meta name="google-site-verification" content="mog5hTsyLTeRMg7IeN0qZ3XtxGxta12EAENCUjZQVCA" />
 
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!--<link rel="stylesheet" href="/bower_components/jquery-ui/themes/cupertino/jquery-ui.min.css">-->
-
     <link rel="stylesheet" href="assets/css/style.css">
 
-    
 </head>
 
-<body ng-app="gleepostweb" ng-controller="SuperMainController" ng-class="{'login-bg':currentState=='auth.login'}" ng-class="{'lbg-overlay':currentState=='auth.login'}" >
-  <div  ng-show="window.isLoggedIn">
-      <div ng-include src="'views/header.html'"></div>
-  </div>
-  <div class="clearFix"></div>
-    <div id="dynamicContent">
-        <div data-ui-view ></div>
-    </div
-
+<body ng-app="oneShopWeb" ng-controller="SuperMainController" >
+  <div data-ui-view ></div>
 </body>
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
@@ -62,16 +48,11 @@
 <link rel="stylesheet" href="/bower_components/angular-emoji-filter/dist/emoji.min.css">
 
 <script src="/init.js"></script>
-<script src="/gleepostweb.js"></script>
+<script src="/oneShopWeb.js"></script>
 <script src="/controllers/header.js"></script>
 <script src="/controllers/index.js"></script>
 <script src="/services/interceptor.js"></script>
-<script src="/services/notifications.js"></script>
 <script src="/routes/main.js"></script>
-
-<script data-pace-options='{ "elements": false, "restartOnRequestAfter": false }' src="/assets/js/pace/pace.min.js"></script>
-<link rel="stylesheet" href="/assets/js/pace/pace.css">
-
 
 <script src="/packages/utilities/utilities.js"></script>
 <script src="/packages/utilities/settings.js"></script>
@@ -85,32 +66,6 @@
 <script src="/packages/campusWall/controllers/campusWall.js"></script>
 <script src="/packages/campusWall/services/campusWall.js"></script>
 
-<script src="/packages/dashboard/dashboard.js"></script>
-<script src="/packages/dashboard/routes/dashboard.js"></script>
-<script src="/packages/dashboard/controllers/dashboard.js"></script>
-<script src="/packages/dashboard/services/dashboard.js"></script>
-
-<script src="/packages/messenger/messenger.js"></script>
-<script src="/packages/messenger/routes/messenger.js"></script>
-<script src="/packages/messenger/filters/messenger.js"></script>
-<script src="/packages/messenger/controllers/messenger.js"></script>
-<script src="/packages/messenger/services/messenger.js"></script>
-
-<script src="/packages/network/network.js"></script>
-<script src="/packages/network/routes/network.js"></script>
-<script src="/packages/network/controllers/network.js"></script>
-<script src="/packages/network/services/network.js"></script>
-
-<script src="/packages/notifications/notifications.js"></script>
-<script src="/packages/notifications/routes/notifications.js"></script>
-<script src="/packages/notifications/controllers/notifications.js"></script>
-<script src="/packages/notifications/services/notifications.js"></script>
-
-<script src="/packages/posts/posts.js"></script>
-<script src="/packages/posts/routes/posts.js"></script>
-<script src="/packages/posts/controllers/posts.js"></script>
-<script src="/packages/posts/services/posts.js"></script>
-
 <script src="/packages/users/users.js"></script>
 <script src="/packages/users/roleConfig.js"></script>
 <script src="/packages/users/routes/auth.js"></script>
@@ -118,37 +73,11 @@
 <script src="/packages/users/services/User.js"></script>
 <script src="/packages/users/services/UserProfile.js"></script>
 
-<script src="/packages/search/search.js"></script>
-<script src="/packages/search/routes/search.js"></script>
-<script src="/packages/search/controllers/search.js"></script>
-<script src="/packages/search/services/search.js"></script>
 <script src="/assets/js/jquery.bpopup.js"></script>
 <script src="/assets/js/jquery.mousewheel.js"></script>
 <script type="text/javascript"src="/assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
 <script>
     moment().format();
-</script>
-
-<script type="text/javascript">
-//$('.wraper').block({ message: null }); 
-
-Pace.on('start', function(){
-   // alert("Pace Started");
-   $('#dynamicContent').css('visibility', 'hidden');
-   //disable_scroll();
-  // $('#dynamicContent').block({ message: null }); 
-  //$('#dynamicContent').fadeOut( "fast" )
-  //$('#dynamicContent').fadeToggle();
-});
-
-Pace.on('hide', function(){
-   // alert("Pace Started");
-  // $('#dynamicContent').css('visibility', 'visible');
-  // enable_scroll();
- // $('#dynamicContent').css('visibility', 'visible').fadeIn( "fast" )
- // $('#dynamicContent').fadeToggle();
- $('#dynamicContent').css('visibility','visible').hide().fadeIn("slow");
-});
 </script>
 
 </html>

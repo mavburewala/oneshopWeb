@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('gleepostweb.utilities').factory('util',[function() {
-  	var injector = angular.injector(['gleepostweb.utilities']);
+angular.module('oneShopWeb.utilities').factory('util',[function() {
+  	var injector = angular.injector(['oneShopWeb.utilities']);
     var dataService = injector.get('data');
 
     return {

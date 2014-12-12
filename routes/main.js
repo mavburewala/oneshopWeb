@@ -1,7 +1,7 @@
 'use strict';
 
 //Setting up route
-angular.module('gleepostweb.main').config(['$stateProvider', '$urlRouterProvider',
+angular.module('oneShopWeb.main').config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         // For unmatched routes:
         var checkLoggedOut = function($q, $timeout, $http, $location,$cookieStore,$state) {

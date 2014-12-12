@@ -1,7 +1,7 @@
 'use strict';
 
 //Global service for global variables
-angular.module('gleepostweb.main').factory('Global', [
+angular.module('oneShopWeb.main').factory('Global', [
 
     function() {
         var _this = this;

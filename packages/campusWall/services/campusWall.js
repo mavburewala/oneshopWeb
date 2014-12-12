@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gleepostweb.campusWall').factory('gleepostWebCampusWall', [
+angular.module('oneShopWeb.campusWall').factory('oneShopWebCampusWall', [
 
     function() {
         return {
@@ -9,9 +9,9 @@ angular.module('gleepostweb.campusWall').factory('gleepostWebCampusWall', [
     }
 ]);
 
-angular.module('gleepostweb.campusWall')
+angular.module('oneShopWeb.campusWall')
     .factory('wall', function($http, $cookieStore) {
-        var injector = angular.injector(['gleepostweb.utilities']);
+        var injector = angular.injector(['oneShopWeb.utilities']);
         var dataService = injector.get('data');
 
         return {

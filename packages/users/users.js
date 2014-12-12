@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('gleepostweb.users', ['ngRoute']);
+angular.module('oneShopWeb.users', ['ngRoute']);

@@ -1,7 +1,7 @@
 'use strict';
 
 //Setting up route
-angular.module('gleepostweb.campusWall').config(['$stateProvider',
+angular.module('oneShopWeb.campusWall').config(['$stateProvider',
     function($stateProvider) {
         // Check if the user is not connected
         var checkLoggedOut = function($q, $timeout, $http, $location,$cookieStore) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gleepostweb.users').factory('gleepostWebUsers', [
+angular.module('oneShopWeb.users').factory('oneShopWebUsers', [
 
     function() {
         return {
@@ -9,9 +9,9 @@ angular.module('gleepostweb.users').factory('gleepostWebUsers', [
     }
 ]);
 
-angular.module('gleepostweb.users')
+angular.module('oneShopWeb.users')
     .factory('Auth', function($http, $cookieStore) {
-        var injector = angular.injector(['gleepostweb.utilities']);
+        var injector = angular.injector(['oneShopWeb.utilities']);
         var dataService = injector.get('data');
         console.log(dataService);
 

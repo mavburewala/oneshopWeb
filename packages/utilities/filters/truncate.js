@@ -1,4 +1,4 @@
-/*angular.module('gleepostweb.utilities', []).
+/*angular.module('oneShopWeb.utilities', []).
     filter('truncate', function () {
         return function (text, length, end) {
             if (isNaN(length))

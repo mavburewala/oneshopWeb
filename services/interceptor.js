@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gleepostweb-factory-interceptor', [])
+angular.module('oneShopWeb-factory-interceptor', [])
     .factory('httpInterceptor', ['$q', '$location',
         function($q, $location) {
             return {
