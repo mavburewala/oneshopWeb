@@ -8,7 +8,19 @@ angular.module('oneShopWeb.main').controller('IndexController', ['$scope', 'Glob
 
 angular.module('oneShopWeb.main').controller('MainController', ['$scope', 
   function($scope) {
-  	//alert("This is Main controller")
+  	
+  	$scope.initAddressSelector = function(){
+  		var addressPicker = new AddressPicker();
+  		var elAddress = angular.element( document.querySelector( '#address' ) );
+
+  		elAddress.typeahead(null, {
+		  displayKey: 'description',
+		  source: addressPicker.ttAdapter()
+		});
+  		
+	};
+
+	$scope.initAddressSelector();
   }
 ]);
 

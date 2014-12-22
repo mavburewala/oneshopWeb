@@ -18,6 +18,7 @@
     "jquery-ui": "latest",
     "d3": "latest",
     "bower-xcharts": "latest",
-    "angular-emoji-filter":"latest"
+    "angular-emoji-filter":"latest",
+    "typeahead-addresspicker": "latest"
   }
 }
