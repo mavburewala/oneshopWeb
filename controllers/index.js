@@ -6,6 +6,11 @@ angular.module('oneShopWeb.main').controller('IndexController', ['$scope', 'Glob
   }
 ]);
 
+angular.module('oneShopWeb.main').controller('MainController', ['$scope', 
+  function($scope) {
+  	//alert("This is Main controller")
+  }
+]);
 
 
 angular.module('oneShopWeb').controller('SuperMainController', ['$scope','$state','$rootScope',

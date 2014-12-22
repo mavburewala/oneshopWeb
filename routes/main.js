@@ -25,7 +25,7 @@ angular.module('oneShopWeb.main').config(['$stateProvider', '$urlRouterProvider'
                 url: '/',
                 templateUrl: 'views/index.html',
                 resolve:{
-                    loggedin:checkLoggedOut
+                    //loggedin:checkLoggedOut
                 }
             });
     }
